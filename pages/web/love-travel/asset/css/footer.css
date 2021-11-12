@@ -1,0 +1,122 @@
+/* footer */
+
+.footer{
+    margin-top: 60px;
+    background-image: url(../img/footer-img.jpg);
+    background-size: cover;
+    min-height: 620px;
+}
+
+.footer-head{
+    align-items: center;
+    height: 200px;
+}
+
+.footer .footer__heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer__heading p{
+    color: var(--text-color);
+    padding: px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    letter-spacing: 2px;
+}
+.footer__heading h2{
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--heading-color);
+}
+
+
+.footer .footer__search{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer__input{
+    background-color: #f9f9f9;
+    border: 1px solid #f1f1f1;
+    border-radius: 30px;
+    padding: 10px 20px;
+    -webkit-appearance: none;
+    color: #a3a3a3;
+    outline: none;
+    font-size: 2rem;
+}
+
+.footer__send{
+    background-color: #14b9d5;
+    border-width: 0px;
+    border-color: #fff;
+    border-radius: 30px;
+    border-style: solid;
+    padding: 10px 20px;
+    -webkit-appearance: none;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1.6rem;
+}
+
+.footer-info{
+    background-color: var(--white-color);
+    padding: 40px 20px;
+}
+
+.footer__logo{
+    width: 150px;
+}
+
+.footer__content{
+    font-size: 1.6rem;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    line-height: 2.4rem;
+    margin: 32px 0;
+}
+
+.footer__social-item{
+    width: 22px;
+    margin-left: 10px;
+}
+
+.footer-info__head{
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.footer-info__list{
+    list-style: none;
+    padding-left: 0;
+
+}
+
+.footer-info__list-item{
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    padding: 5px 0;
+}
+
+.footer-info__icon{
+    margin-right: 8px;
+}
+
+.footer__footer{
+    background-color: #14B9D5;
+    display: flex;
+    color: var(--white-color);
+    padding: 10px 20px;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}

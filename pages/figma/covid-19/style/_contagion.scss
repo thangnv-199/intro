@@ -1,0 +1,94 @@
+.contagion {
+
+    margin-bottom: 150px;
+
+    &-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    &-header-text {
+        max-width: 570px;
+        margin: 30px auto 0;
+    }
+
+    &-list {
+        display: flex;
+        gap: 30px;
+    }
+
+    &-item {
+        padding: 70px 50px;
+        height: auto;
+        background: #FFFFFF;
+        box-shadow: 0px 35px 87px rgba(0, 0, 0, 0.11);
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        
+        &:first-child::after {  
+            content: ""; 
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height:6px;
+            background-color: $primary-color;
+        }
+    }
+
+    &-image  {
+        margin-bottom: 55px;
+
+        img {
+            margin: auto;
+            height: 280px;
+        }
+    }
+
+    &-content {
+        text-align: center;
+    }
+
+    &-title {
+        font-size: 28px;
+        line-height: 147%;
+        margin-bottom: 13px;
+    }
+    &-description {
+        line-height: 185%;
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-list {
+            flex-direction: column;
+            
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        &-image {
+            flex-shrink: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+
+        margin-bottom: 80px;
+        
+        &-item {
+            gap: 40px;
+            flex-direction: column;
+        }
+
+        &-image {
+            margin-bottom: 0;
+        }
+    }
+    
+    
+}

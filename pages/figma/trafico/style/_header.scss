@@ -1,0 +1,95 @@
+.header {
+
+    padding-top: 40px;
+    margin-bottom: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &-image {
+        margin-right: auto;
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        &-link {
+            text-transform: uppercase;
+            color: white;
+            font-weight: bold;
+            padding: 20px 24px;
+            display: inline-block;
+
+            &:hover {
+                color: #ccc;
+            }            
+        }
+
+        &-open {
+            display: none; 
+        }
+
+        &-close {
+            display: none; 
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-nav {
+            gap: 10px;
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+        margin-bottom: 40px;
+        padding-top: 20px;
+        
+        &-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $primary-color;
+            padding-top: 80px;
+            flex-direction: column;
+            transition: all 0.4s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+            z-index: 1000;
+
+            &-item:last-child a {
+                color: $primary-color;
+                background-color: white;
+                
+            }
+
+            &-open {
+                display: inline-block;
+                font-size: 28px;
+                color: white;
+                padding: 12px;
+            }
+
+            &-close {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                font-size: 28px;
+                color: white;
+            }
+        }
+    }
+    
+}
+
+#header-checkbox:checked ~ .header-nav {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}

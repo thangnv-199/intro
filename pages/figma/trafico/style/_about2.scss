@@ -1,0 +1,101 @@
+.about2 {
+
+    margin-bottom: 160px;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 44px;
+    }
+
+    &-arrows {
+        i {
+            font-size: 32px;
+            color: $primary-color;
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &.disabled {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &-body {
+        display: grid;
+        grid-template-columns: 4fr 7fr;
+    }
+
+    &-heading {
+        font-size: 48px;
+        line-height: 1.4;
+    }
+
+    &-slider {
+
+        overflow: hidden;
+
+        .slider-list {
+            display: flex;
+            gap: 20px;
+            transition: all 0.4s linear;
+        }
+
+        .slider-item {
+            flex: 1 0 100%;
+            background-color: #fff;
+            max-width: 420px;
+            padding: 60px 50px 40px;
+            box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
+            border-radius: 10px;
+
+            &-description {
+                font-weight: 300px;
+                margin-bottom: 60px;
+                line-height: 30px;
+            }
+
+            &-customer {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            &-avatar {
+                width: 60px;
+                height: 60px;
+            }
+
+            &-name {
+                font-weight: bold;
+                line-height: 30px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-header {
+            margin-bottom: 16px;
+        }
+        &-body {
+            grid-template-columns: 1fr;
+        }
+        &-heading {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        &-slider {
+            .slider-list {
+                display: flex;
+                gap: 0;
+                transition: all 0.4s linear;
+            }
+        }
+
+    }
+    
+
+}

@@ -1,0 +1,299 @@
+.body {
+    position: relative;
+    padding-bottom: 40px;
+
+    &-main {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+.nav {
+
+    &-wrapper {
+        min-width: 160px;
+        width: 100%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    gap: 20px;
+
+    border-radius: 20px;
+    padding: 30px;
+    background-image: linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.3));
+
+    &-item {
+        text-align: center;
+        padding: 12px;
+        border-radius: 20px;
+        background-color: rgba(235, 240, 243, 0.8);
+        cursor: pointer;
+        transition: all 0.4s linear;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        lord-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        span {
+            font-weight: bold;
+
+        }
+
+        &.--active {
+            background-image: linear-gradient(142.17deg, #4f93f1 6.66%, #de30fd 91.48%);
+            box-shadow: inset -0.25rem -0.25rem 0.3125rem rgba(0, 0, 0, 0.1), inset 0.25rem 0.25rem 0.3125rem rgba(255, 255, 255, 0.2);
+        }
+
+        &:hover:not(.--active) {
+            background-image: linear-gradient(142.17deg, rgba(79, 147, 241, 0.3) 6.66%, rgba(222, 48, 253, 0.3) 91.48%);
+        }
+    }
+}
+
+.content {
+    border-radius: 20px;
+    padding: 30px;
+    background-image: linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.3));
+    max-width: 100%;
+
+    & > * {
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+
+        &.--show {
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.education, .target {
+
+    .timeline {
+        margin-bottom: 20px;
+        &-item {
+            position: relative;
+            padding-left: 20px;
+            padding-bottom: 20px;
+    
+            &::after {
+                content: "";
+                position: absolute;
+                top: 4px;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                background-color: #304CFD;
+                border-radius: 100%;
+                box-shadow: 0 0 0 0.1875rem rgba(48, 76, 253, 0.25);
+            }
+    
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                top: 4px;
+                left: 5px;
+                width: 1px;
+                background-color: rgba(197, 197, 197, 0.8);
+            }
+    
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .skill {
+        &-heading {
+            margin-bottom: 20px;
+        }
+        
+        &-list {
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+        }
+    
+        &-field {
+            height: 24px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            
+            & + .skill-field {
+                margin-top: 20px;
+            }
+        }
+    
+        
+        &-process {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 0 12px;
+            width: var(--process);
+            background-image: linear-gradient(
+                142.17deg,rgba(48, 134, 255, 0.66),rgba(48, 76, 253, 0.9));
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            
+            span {
+                font-size: 13px;
+                line-height: 24px;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+    }
+    
+}
+
+.target {
+
+    .slider {
+        // &-list {
+        //     display: unset !important;
+        // }
+        // &-item {
+        //     flex: unset !important;
+        // }
+        &-link {
+            grid-template-columns: 1fr 4fr !important;
+                height: 120px;
+        }
+    }
+}
+
+.favorite {
+
+    &-block {
+        margin-bottom: 40px;
+    }
+
+    .slider-link {
+        min-height: 200px;
+    }
+
+    &-item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    &-link {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        gap: 20px;
+        box-shadow:  0px 8px 12px 0px rgba(0, 0, 0, 0.1);
+        background-color: #e5f0f4;
+        border-radius: 20px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            transform: scale(1.01);
+            box-shadow:  0px 8px 12px 0px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &-image {
+        
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+    }
+
+    &-name {
+        margin-bottom: 12px;
+    }
+
+    &-description {
+        display:-webkit-box;
+        -webkit-line-clamp:5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .body {
+
+        &-main {
+            flex-direction: column;
+        }
+
+        .content {
+            width: 100%;
+            padding: 20px;
+        }
+    }
+    .nav {
+        flex-direction: row;
+        
+        &-wrapper {
+            width: 100%;
+        }
+
+        &-item {
+            flex: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .nav {
+        padding: 12px;
+        background-image: linear-gradient(360deg, #58aec3, #ccdde4);
+        border-radius: 0;
+
+        &-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        lord-icon {
+            width: 40px;
+            height: 40px;
+
+        }
+
+        &-item {
+            padding: 8px 0;
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}

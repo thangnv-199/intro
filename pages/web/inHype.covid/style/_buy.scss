@@ -1,0 +1,93 @@
+.buy {
+    margin: 60px 0;
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    &-image {
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        display: block;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-top: 20px solid red;
+            border-left: 20px solid red;
+            border-bottom: 20px solid white;
+            border-right: 20px solid white;
+            transform: translate(100%, 100%);
+            transition: all 0.2s ease;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &::after {
+                transform: translate(0);
+            }
+        }
+    }
+
+    &-name {
+        margin-top: 12px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-list {
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 40%;
+            grid-auto-flow: column;
+            grid-gap: 1.5rem;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+        }
+
+        &-list::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        &-list>* {
+            scroll-snap-align: start;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-list {
+            grid-auto-columns: 80%;
+        }
+    }
+
+}

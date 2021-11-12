@@ -1,0 +1,99 @@
+
+.footer{
+    background-color: #212121;
+}
+
+
+.footer .grid.wide{
+    padding-top: 100px;
+}
+
+.footer__logo{
+    width: 100%;
+}
+
+.footer__text{
+    color: #A4A4A4;
+    font-size: 1.4rem;
+    display: block;
+    line-height: 2.4rem;
+    text-decoration: none;
+}
+
+.footer__text2{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    display: block;
+    font-size: 1.4rem;
+}
+
+.footer__text2 i {
+    margin-right: 8px;
+}
+
+.footer-column{
+    margin-bottom: 60px;
+}
+
+.footer-column__title{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 0;
+}
+
+.footer-column > form > div{
+    background-color: #595959;
+    color: #fff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.footer__icon{
+    font-size: 1.6rem;
+    position: relative;
+    bottom: 1px;
+}
+
+.footer__input{
+    outline: none;
+    border: none;
+    background-color: #595959;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 8px;
+
+}
+.footer__btn{
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.4rem;
+}
+
+.footer__btn:hover{
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.footer__footer{
+    text-align: center;
+    padding: 40px 0;
+    font-size: 1.6rem;
+    color: #A4A4A4;
+}
+
+.footer__footer a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.footer__footer a:hover,
+.footer__text:hover,
+.footer__text2:hover{
+    color: var(--primary-color);
+}

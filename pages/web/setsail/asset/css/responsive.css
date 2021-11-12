@@ -1,0 +1,138 @@
+/* table and mobile*/
+@media (min-width: 1023px) {
+
+    .hide-on-pc {
+        display: none;
+    }
+}
+
+
+
+
+/* table and mobile*/
+@media (max-width: 1023px) {
+    .hide-on-table-and-mobile {
+        display: none;
+    }
+
+    /* content */
+
+    .content-tour-address {
+        margin-top: 160px;
+    }
+    .content-head__find {
+        box-shadow: unset;
+    }
+
+    .content-head__find-block {
+        margin: 0 60px;
+    }
+
+    .content-head__find-btn {
+        height: 60px;
+    }
+
+    .content .content-head__warp {
+        padding: 0 20px;
+    }
+    
+
+    /* header */
+
+    .footer__logo {
+        width: unset;
+    }
+}
+
+
+
+/* table */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+
+    /* content */
+
+
+    .tryNow__video {
+        height: 44vh;
+    }
+
+    .content-head__heading h1 {
+        font-size: 6rem;
+    }
+    .tour-address__country{
+        font-size: 2.8rem;
+    }
+
+}
+
+
+
+/* mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    /* header */
+
+    .header-mobile__block {
+        justify-content: space-around;
+    }
+
+    .mobile-subnav{
+        padding: 0 12px;
+    }
+
+
+
+    /* content */
+
+    .content {}
+
+    .content__head-title {
+        font-size: 3.5rem;
+    }
+
+    .content-head__heading h3 {
+        font-size: 3rem;
+    }
+
+    .content-head__heading h1 {
+        font-size: 4rem;
+    }
+
+    .content-head {
+        height: 50vh;
+    }
+
+
+    .paris__logo img {
+        width: 100%;
+    }
+
+
+
+    .tryNow__video {
+        max-width: 80%;
+        height: 33vh;
+    }
+
+    .content-tour-address__list,
+    .tour-address__list2,
+    .content-ourBlog,
+    .content-destination,
+    .footer-row {
+        margin: 0 20px;
+    }
+
+    .content-destination__bg {
+        background-size: unset;
+    }
+
+    /* footer */
+
+}

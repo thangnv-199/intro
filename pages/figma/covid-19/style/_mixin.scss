@@ -1,0 +1,17 @@
+@mixin generatorDot($size, $spacing, $column) {
+    width: $size;
+    height: $size;
+    background-color: #97C3F9;
+    border-radius: 100%;
+    $value: ();
+    @for $i from 0 to $column {
+        @for $j from 0 to $column {
+            $x: $i * $spacing + px;
+            $y: $j * $spacing + px;
+            $theShadow: $x $y #97C3F9;
+            $value: append($value, $theShadow, comma);
+        }
+    }
+    box-shadow: $value;
+    z-index: 100;
+}

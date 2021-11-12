@@ -1,0 +1,44 @@
+.hero {
+
+    margin-bottom: 190px;
+
+    &-main{
+        display: flex;
+        align-items: center;
+        gap: 34px;
+
+    }
+
+    &-content{
+        width: 100%;
+        max-width: 445px;
+    }
+
+    &-heading {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        color: $heading-color;
+    }
+
+    &-description {
+        font-size: 21px;
+        line-height: 152%;
+        margin-bottom: 45px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        
+        margin-bottom: 100px;
+
+        &-heading {
+            font-size: 36px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-main {
+            flex-direction: column;
+        }
+    }
+}

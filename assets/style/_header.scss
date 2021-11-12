@@ -1,0 +1,113 @@
+.header {
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: 30px;
+    
+
+    &-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+        background-image: linear-gradient(to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3));
+        border-radius: 20px;
+        padding: 30px;
+    }
+
+    &-left {
+        display: flex;
+        gap: 24px;
+        border-right: 1px solid #c2c4c5;
+
+        .avatar {
+            height: 160px;
+            width: 160px;
+    
+            img {
+                border-radius: 20px;
+                box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+        .name-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+        }
+        .name {
+            text-transform: capitalize;
+            text-align: center;
+
+        }
+        .social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .social-link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: $black-color;
+            font-size: 18px;
+            border-radius: 100%;
+            transition: all 0.25s linear;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+            &:hover {
+                background-color: var(--bg-hover-color);
+                color: #fff;
+            }
+        }
+    }
+
+    .info {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 20px;
+
+        &-field {
+            text-transform: uppercase;
+            color: #949292;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        &-description {
+            font-size: 14px;
+        }
+    }
+    
+    @media screen and (max-width: 1023px) {
+        &-main {
+            grid-template-columns: 1fr;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        &-left {
+            flex-direction: column;
+            align-items: center;
+            border: none;
+
+            .name {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+        &-main {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    
+}

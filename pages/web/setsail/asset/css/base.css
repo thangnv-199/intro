@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #3fd0d4;
+    --text-color: #505050;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+}
+
+body{
+    color: var(--text-color) ;
+}
+
+.bd-100{
+    border-radius: 100%;
+}
+
+.white-color{
+    color: white !important;
+}
+
+.text-align{
+    text-align: center;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.overlay__img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.btn{
+    background-color: var(--primary-color);
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+}
+
+
+
+.content-tour .slick-next:before,
+.content-tour .slick-prev:before,
+.content-topReview .slick-next:before,
+.content-topReview .slick-prev:before{
+    display: none;
+}
+
+
+
+.header__top .hvr-underline-from-left::before{
+    background-color: #fff;
+    height: 3px;
+}
+
+.hvr-underline-from-left:before{
+    background-color: var(--primary-color);
+    height: 3px;
+}
+
+.tour__img .hvr-underline-from-left:before{
+    background-color: #fff;
+    height: 2px;
+}
+
+.content .slick-dots li button{
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.5;
+    height: 12px;
+    width: 12px;
+}
+.slick-dots li button:before{
+    color: transparent;
+}
+.content .slick-dots .slick-active{
+    border-radius: 100%;
+    background-color: var(--primary-color);
+    height: 12px;
+    width: 12px;
+}
+
+.content .slick-dots li{
+    height: 12px;
+    width: 12px;
+    overflow: hidden;
+}
+
+.content .slick-dots li.slick-active button:before{
+    color: transparent;
+    height: 12px;
+    width: 12px;
+}
+
+.content .slick-next:before,
+.content .slick-prev:before{
+    color: var(--primary-color);
+    font-size: 5rem;
+}
+
+.content .slick-next:before{
+    right: 30px;
+    position: relative;
+}
+
+.content .slick-next:before:hover,
+.content .slick-prev:before:hover{
+    opacity: 0.8;
+}
+
+
+
+@keyframes grow {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+

@@ -1,0 +1,151 @@
+body {
+    font-family: $primary-font;
+    color: $text-color;
+    font-size: 16px;
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.h-full {
+    height: 100% !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.highlight {
+    color: $primary-color;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);    
+    transition: all 0.25s linear;
+}
+
+.title {
+    font-size: 22px;
+    line-height: 27.5px;
+    font-weight: bold;
+    color: $black-color;
+    display: block;
+
+    &--lg {
+        font-size: 30px;
+        line-height: 37.5px;
+    }
+}
+
+.block-title {
+    padding: 15px 0;
+    border-bottom: 3px solid $border-grey-color;
+    margin-bottom: 40px;
+}
+
+.tag {
+    display: inline-block;
+
+    &-content {
+        padding: 4px 12px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+
+    &-circle {
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        margin-right: 10px;
+        background-color: var(--bg-color);
+    }
+
+    &-name {
+        color: $black-color;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.button {
+    font-family: $primary-font;
+    background-color: $primary-color;
+    color: white;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    padding: 13px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s linear;
+
+    &:hover {
+        background-color: $button-hover-color;
+    }
+}
+
+.block-mb {
+    margin-bottom: 60px;
+}
+
+.form {
+    padding: 30px;
+    background-color: #eeeeee;
+    margin-bottom: 40px;
+    border-radius: 8px;
+
+    &-heading {
+        margin-bottom: 28px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    p {
+        margin-bottom: 25px;
+        line-height: 26px;
+    }
+
+    &-input {
+        width: 100%;
+        margin-bottom: 30px;
+        border: none;
+        outline: none;
+        padding: 8px 20px;
+        line-height: 26px;
+        background-color: #fff;
+        // transition: all 0.4s linear;
+
+        &:focus {
+            border: 1px solid $primary-color;
+        }
+    }
+    .button {
+        width: 100%;
+    }
+}

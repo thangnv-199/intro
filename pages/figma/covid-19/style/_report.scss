@@ -1,0 +1,10 @@
+.report {
+    display: flex;
+    align-items: center;
+    margin-bottom: 160px;
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column-reverse;
+    }
+    
+}

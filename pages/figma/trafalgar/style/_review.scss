@@ -1,0 +1,145 @@
+.review {
+
+    position: relative;
+    margin-bottom: 222px;
+
+    &-main {
+        background-image: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
+        border-radius: 20px;
+        padding: 48px 96px;
+        position: relative;
+    }
+
+    &-heading {
+        color: white;
+        margin-bottom: 66px;
+        &::before{
+            background-color: white;
+        }
+    }
+
+    &-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 30px;
+        color : white;
+        align-items: center;
+    }
+
+    &-customer {
+        display: flex;
+        align-items: center;
+        gap: 30px
+    }
+
+    &-avatar {
+        width: 140px;
+        height: 140px;
+        img {
+            flex-shrink: 0;
+            border: 4px solid white;
+            border-radius: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-author {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 218%;
+    }
+
+    &-description {
+        font-size: 19px;
+        line-height: 158%;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    &-dots-1 {
+        bottom: 0;
+        left: 0;
+        transform: translate(-40%, -20%);
+    }
+
+    .slick-dots {
+        
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 18px;
+
+        button {
+            background-color: #5B9BF3;
+            opacity: 0.4;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            font-size: 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+        }
+
+        .slick-active button{
+            opacity: 1;
+        }
+    }
+
+    .slick-arrow {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: $primary-color;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .slick-next {
+        transform: translateX(160px);
+        left: auto;
+        right: 50%;
+    }
+
+    .slick-prev {
+        transform: translateX(-160px);
+    }
+
+    @media screen and (max-width: 1023px) {
+
+        margin-bottom: 100px;
+
+        &-main {
+            padding: 30px;
+        }
+
+        &-avatar {
+            width: 100px;
+            height: 100px;
+        }
+        
+    }
+
+    @media screen and (max-width: 767px) {
+        &-content {
+            grid-template-columns: 1fr;
+            gap: 34px;
+        }
+
+        
+
+        &-description {
+            font-size: 16px;
+        }
+    }
+}

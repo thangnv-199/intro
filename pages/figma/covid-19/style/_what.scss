@@ -1,0 +1,24 @@
+.what {
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 150px;
+
+    &-image {
+        transform: rotate(-10deg);
+    }
+
+    &-content {
+        max-width: 650px;
+    }
+
+    &-description {
+        font-size: 20px;
+        margin-bottom: 56px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        flex-direction: column;
+    }
+    
+}

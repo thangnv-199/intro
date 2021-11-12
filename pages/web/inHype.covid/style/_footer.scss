@@ -1,0 +1,101 @@
+.footer {
+    background-color: #13181C;
+    color: white !important;
+
+    &-main {
+        padding: 50px 0 80px;
+        display: grid;
+        grid-template-columns: 3fr 2fr 2fr 3fr;
+        gap: 30px;
+    }
+
+    &-column {
+        .post-content {
+            margin-bottom: 30px;
+        }
+        .title {
+            color: inherit;
+            transition: color 0.4s linear;
+            font-size: 18px;
+            &:hover {
+                color: #ccc;
+            }
+        }
+        &-title {
+            margin-bottom: 30px;
+        }
+        &-description {
+            margin-bottom: 25px;
+            line-height: 26px;
+        }
+    }
+
+    &-navigation {
+        &-link {
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 26px;
+            padding-bottom: 12px;
+            display: inline-block;
+            transition: color 0.4s linear;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+    .form {
+        p {
+            color: $black-color;
+        }
+    }
+
+    &-copyright {
+        span {
+            color: $primary-color;
+        }
+    }
+
+    &-bottom {
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid $border-darkgrey-color;
+    }
+
+    &-social {
+        &-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        &-link {
+            color: white;
+            display: inline-block;
+            padding: 8px;
+            font-size: 18px;
+            transition: color 0.4s linear;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-main {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    @media screen and (max-width: 1023px) {
+        &-main {
+            grid-template-columns: 1fr;
+        }
+        &-bottom {
+            text-align: center;
+            flex-direction: column;
+        }
+    }
+    
+}

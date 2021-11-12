@@ -1,0 +1,120 @@
+.trending {
+
+    margin-bottom: 200px;
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+
+    &-item {
+
+        border-radius: 8px;
+        overflow: hidden;
+
+        
+
+        &-image {
+            height: 230px;
+            object-fit: cover;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s linear;
+            }
+    
+            &:hover {
+                img {
+                    transition: all 0.4s linear;
+                    transform: scale(1.1);
+                }
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &-title {
+            color: $heading-color;
+            font-size: 19px;
+            line-height: 158%;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+        }
+
+        &-description {
+            font-size: 15;
+            line-height: 173%;
+            margin-bottom: 23px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+        }
+
+        &-link {
+            color: $primary-color;
+            font-weight: 600;
+            font-size: 15;
+            line-height: 28px;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-list {
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 35%;
+            grid-auto-flow: column;
+            grid-gap: 1.5rem;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+        }
+
+        &-list::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        &-list>* {
+            scroll-snap-align: start;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-list {
+            grid-auto-columns: 66%;
+        }
+    }
+    
+
+
+}

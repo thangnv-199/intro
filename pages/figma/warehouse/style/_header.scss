@@ -1,0 +1,122 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    margin-bottom: 130px;
+
+    
+    &-logo {
+        margin-right: 120px;
+    }
+
+    &-demo-link {
+        margin-left: auto;
+        background-color: white;
+        border-radius: 50px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            background-color: $primary-color;
+            opacity: 0.4;
+            transition: all 0.25s ease-in-out;
+        }
+
+        &:hover {
+            // color: white;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-weight: 500;
+
+    &-link {
+        color: inherit;
+        line-height: 1.6;
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        &.--active {
+            font-weight: bold;
+            color: $primary-color;
+        }
+    }
+
+    &-open {
+        display: none;
+    }
+
+    &-close {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .header {
+        padding-top: 30px;
+        &-logo {
+            margin-right:  auto;
+        }
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        flex-direction: column;
+        background-color: $primary-color;
+        z-index: 100;
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: all 0.4s linear;
+        opacity: 0;
+        visibility: hidden;
+
+        &-link {
+            color: white;
+            &.--active {
+                color: $secondary-color;
+            }
+        }
+
+        &-open {
+            display: inline-block;
+            padding: 12px;
+            font-size: 28px;
+        }
+
+        &-close {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 28px;
+            color: white;
+            padding: 20px;
+        }
+    }
+}
+
+#header-checkbox:checked ~ .nav {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}

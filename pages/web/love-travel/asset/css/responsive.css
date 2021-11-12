@@ -1,0 +1,129 @@
+
+.hide-on-pc{
+    display: none;
+}
+
+/* > PC low resolution */
+@media (min-width: 1024px) and (max-width: 1239px){
+    
+    .content .content__header{
+        height: 1200px;
+    }
+
+    .content .content__heading{
+        height: unset;
+    }
+    .content__heading-img-item {
+        margin: 0 20px 20px;
+
+    }
+}
+
+/* tablet va mobile*/
+@media (max-width: 1113px){
+    .hide-on-table-and-mobile{
+        display: none;
+    }
+
+    /* Header */
+
+    .header__logo{
+        margin-bottom: 10px;
+    }
+
+    .header__btn{
+        position: unset;
+        text-align: center;
+    }
+    /* Content */
+    .content__header{
+        height: 1200px;
+    }
+    .content__header-img {
+        width: unset;
+    }
+
+    .content__heading-select-list{
+        width: 80%;
+    }
+
+    .content__heading-img-item {
+        margin: 0 20px 20px;
+
+    }
+
+    .content__heading-select-icon{
+        right: 12%;
+    }
+    .best-tour__img{
+        margin: 40px 0;
+        height: 410px;
+    }
+
+    .our-packages__item{
+        margin-bottom: 40px;
+        padding: 0;
+    }
+    .best-tour .best-tour__countdown{
+        width: 100%;
+        left: unset;
+        transform: translateY(100%);
+    }
+    .header-navmobile{
+        display: block;
+    }
+}
+
+
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1113px){
+    .hide-on-table{
+        display: none;
+    }
+
+    /* content */
+
+
+        /* footer */
+    .footer__input{
+        flex: 3;
+    }
+    .footer__send{
+        flex: 1;
+    }
+}
+
+
+
+/* mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile{
+        display: none;
+    }
+
+    .content__allPackages .content__allPackages-heading,
+    .content__allPackages .content__allPackages-link{
+        justify-content: center;
+        height: unset;
+    }
+    .footer{
+        padding: 40px;
+    }
+    .footer__input{
+        width: 100%;
+    }
+    .footer__send{
+        width: 100%;
+        margin-left: 0;
+    }
+    .footer__search{
+        flex-direction: column;
+    }
+    .footer-info{
+        padding: 40px;
+    }
+    .footer__footer{
+        justify-content: center;
+    }
+}

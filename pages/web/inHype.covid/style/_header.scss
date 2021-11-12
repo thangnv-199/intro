@@ -1,0 +1,220 @@
+.header {
+
+    color: $black-color;
+    margin-bottom: 40px;
+    position: relative;
+
+    &-top {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $border-grey-color;
+    }
+
+    &-link {
+        display: inline-block;
+        padding: 10px;
+        line-height: 24px;
+
+        &:hover {
+            color: $text-hover-color;
+        }
+
+        i{ 
+            margin-right: 4px;
+        }
+    }
+
+    &-main {
+        margin-bottom: 40px;
+        margin-top: 36px;
+        display: flex;
+
+    }
+
+    &-heading {
+        flex: 1;
+        h1 { 
+            font-size: 36px;
+            line-height: 1;
+            font-weight: 700;
+            font-family: $secondary-font;
+        }
+    }
+
+    &-logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    &-social {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        a {
+            color: inherit;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        
+        i {
+            padding: 16px;
+            font-size: 20px;
+        }
+    }
+
+    &-search {
+        i {
+            background-color: $bg-grey-color;
+            transition: all 0.4s linear;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: #49484b;
+                color: #fff;
+            }
+        }
+    }
+
+    &-nav {
+        background-color: $primary-color;
+        padding: 10px 140px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+        
+        &-item {
+            color: white;
+            line-height: 18px;
+            font-weight: bold;
+            padding: 13px 18px 13px 0;
+            cursor: pointer;
+            white-space: nowrap;
+
+            &:hover {
+                color: #ccc;
+            }
+
+            i {
+                position: relative;
+                margin-left: 4px;
+                font-size: 12px;
+            }
+        }
+
+        &-link {
+            color: inherit;
+        }
+
+        &-highlight {
+            background-color: #000;
+            padding: 5px;
+            font-weight: 300;
+            border-radius: 5px;
+            font-size: 10px;
+            line-height: 18px;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        
+        &-top {
+            display: none;
+        }
+
+        &-main {
+            flex-wrap: wrap;
+        }
+
+        &-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            i{
+                padding: 8px;
+                border-radius: 4px;
+                font-size: 24px;
+                border: 1px solid $border-grey-color;
+            }
+            p {
+                display: none;
+            }
+        }
+
+        &-logo {
+            margin-top: 12px;
+            flex: unset;
+            order: 1;
+            width: 100%;
+        }
+
+        &-nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 0;
+            overflow: hidden;
+            top: 100%;
+            background-color: #fff;
+            color: $black-color;
+            z-index: 100;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: all 0.4s linear;
+            opacity: 0;
+            visibility: hidden;
+            padding: 20px;
+            padding-top: 0;
+
+            &-item {
+                padding: 8px 0;
+                width: 100%;
+                color: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &-highlight {
+                color: white;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-heading {
+            h1 {
+                font-size: 24px;
+            }
+            i {
+                font-size: 18px;
+            }
+        }
+        &-social {
+            flex: 0;
+            a {
+                display: none;
+            }
+        }
+        &-search {
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+    
+    
+}
+
+#header-checkbox:checked ~ .header-nav {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    padding-top: 20px;
+}

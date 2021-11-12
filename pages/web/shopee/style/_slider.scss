@@ -1,0 +1,131 @@
+.slider {
+
+    position: relative;
+
+    &:hover {
+        .slider-prev-button, .slider-next-button {
+            display: block;
+        }
+    }
+
+    &-track {
+        overflow-x: auto;
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &-list {
+        display: flex;
+        transition: all 0.4s linear;
+    }
+
+    &-item {
+        flex: 1 0 100%;
+    }
+
+    &-prev-button, &-next-button {
+        display: none;
+        transition: all 0.4s linear;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        border: none;
+        outline: none;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        i {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        &.--disabled {
+            pointer-events: none;
+            
+            i {
+                color: #aaa;
+            }
+        }
+    }
+
+    &-next-button {
+        left: unset;
+        right: 0;
+    }
+
+    .dots {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 100%;
+            cursor: pointer;
+
+            &.--active {
+                width: 13px;
+                height: 13px;
+                background-color: $primary-color;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+
+        &-track {
+            overflow: hidden;
+        }
+        
+        .slider-prev-button, .slider-next-button {
+            display: block;
+        }
+    }
+}
+
+.slick-slider {
+    .next-button, .prev-button {
+        background-color: #fff;
+        border: none;
+        outline: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 12px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transition: transform 0.25s linear;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        &.slick-disabled {
+            pointer-events: none;
+            color: #ccc;
+        }
+    }
+
+    .prev-button {
+        left: 0;
+        right: unset;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .next-button, .prev-button {
+            transform: scale(1.5);
+        }
+    }
+    
+}
