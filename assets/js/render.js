@@ -1,6 +1,7 @@
 const jsProductList = document.querySelector('.js-slider .slider-list');
 const figmaProductList = document.querySelector('.figma-slider .slider-list');
 const webProductList = document.querySelector('.web-slider .slider-list');
+const psdProductList = document.querySelector('.psd-slider .slider-list');
 
 const skillList = document.querySelector('.skill-list');
 const inspirationList = document.querySelector('.inspirationSlider .slider-list');
@@ -71,6 +72,12 @@ const render = {
             url: './pages/web/sns/index.html',
             name: 'sns',
             imageSrc: './assets/images/sns.png',
+        }, ];
+
+        this.psdProductListData = [{
+            url: './pages/psd/octavian2/index.html',
+            name: 'octavian2',
+            imageSrc: './assets/images/octavian2.png',
         }, ];
 
         this.skillData = [{
@@ -333,6 +340,7 @@ const render = {
         this.renderIntroSlider(this.jsProductListData, jsProductList);
         this.renderIntroSlider(this.figmaProductListData, figmaProductList);
         this.renderIntroSlider(this.webProductListData, webProductList);
+        this.renderIntroSlider(this.psdProductListData, psdProductList);
         this.renderSkillField(this.skillData, skillList);
         this.renderFavoriteFilm(this.favoriteFilmData, favoriteFilmList);
         this.renderFavoriteSlider(this.detectiveStoreListData, detectiveStoreList);

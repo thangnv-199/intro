@@ -174,14 +174,7 @@
 }
 
 .target {
-
     .slider {
-        // &-list {
-        //     display: unset !important;
-        // }
-        // &-item {
-        //     flex: unset !important;
-        // }
         &-link {
             grid-template-columns: 1fr 4fr !important;
                 height: 120px;

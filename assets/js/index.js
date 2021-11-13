@@ -1,6 +1,7 @@
 const jsSliderTrack = document.querySelector('.js-slider .slider-track');
 const figmaSliderTrack = document.querySelector('.figma-slider .slider-track');
 const webSliderTrack = document.querySelector('.web-slider .slider-track');
+const psdSliderTrack = document.querySelector('.psd-slider .slider-track');
 
 const nav = document.querySelector('.nav');
 const tabs = document.querySelectorAll('.tab');
@@ -14,7 +15,7 @@ const app = {
     },
 
     handleEvents: function () {
-        [jsSliderTrack, figmaSliderTrack, webSliderTrack].forEach(slider => {
+        [jsSliderTrack, figmaSliderTrack, webSliderTrack, psdSliderTrack].forEach(slider => {
             this.draggbleAxisX(slider);
             slider.querySelectorAll('.slider-image').forEach(image => {
                 image.addEventListener('click', (e) => {

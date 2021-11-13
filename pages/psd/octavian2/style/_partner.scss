@@ -1,0 +1,28 @@
+.partner {
+    margin-bottom: 100px;
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        gap: 70px 0;
+    }
+
+    img {
+        margin: auto;
+
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 50px;
+        &-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+    }
+    
+}

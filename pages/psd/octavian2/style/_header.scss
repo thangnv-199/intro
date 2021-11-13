@@ -1,0 +1,40 @@
+.header {
+    padding: 40px 0;
+    &-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 0 60px;
+
+        i {
+            cursor: pointer;
+            font-size: 20px;
+            padding: 8px;
+        }
+    }
+
+    &-phone {
+        font-weight: 300;
+        span {
+            font-weight: 600;
+            margin-left: 12px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 20px 0;
+
+        &-phone {
+            display: none;
+        }
+
+        .nav {
+            gap: 20px;
+        }
+    }
+    
+}
