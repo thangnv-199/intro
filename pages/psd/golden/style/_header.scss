@@ -1,0 +1,89 @@
+.header {
+    z-index: 10;
+    position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding-top: 40px;
+    &-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        &-link {
+            text-transform: uppercase;
+            line-height: percentage(46 / 16);
+            color: #fff;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        &-open {
+            color: #fff;
+            font-size: 24px;
+            padding: 8px;
+            cursor: pointer;
+            display: none;
+        }
+
+        &-close {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: #f1f1f1;
+            flex-direction: column;
+            padding: 80px 20px 20px;
+            box-shadow: 0px 0px 24px 4px rgba(149, 157, 165, 0.2) ;
+            transform: translateX(100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+
+            &-link {
+                color: $black-color;
+
+                &.--active {
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+            }
+
+            &-open {
+                display: inline-block;
+            }
+
+            &-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                font-size: 24px;
+            }
+        }
+    }
+    
+}
+
+#header-checkbox:checked ~ .header-nav {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}

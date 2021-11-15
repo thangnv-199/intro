@@ -1,0 +1,129 @@
+.about {
+    padding: 120px 0;
+
+    &-item {
+        display: grid;
+        grid-template-columns: 6fr 3fr 6fr;
+        align-items: center;
+        gap: 40px;
+        
+        &:not(:last-child) {
+            padding-bottom: 100px;
+        }
+
+        &:nth-child(even) {
+            .about-content {
+                grid-column-start: 3;
+                text-align: left;
+            }
+            .about-image {
+                grid-column-start: 2;
+                grid-row-start: 1;
+            }
+        }
+
+        &:last-child {
+            .about-image::after {
+                display: none;
+            }
+        }
+    }
+
+    &-content {
+        text-align: right;
+        margin-left: auto;
+    }
+
+    &-image {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.25s linear;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            background-color: #f1f1f1;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            transition: all 0.25s linear;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:hover{
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &-title {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        padding: 60px 0;
+        &-item {
+            grid-template-columns: 2fr 1fr;
+
+            &:nth-child(even) {
+                grid-template-columns: 1fr 2fr;
+                .about-content {
+                    grid-column-start: 2;
+                    text-align: left;
+                }
+                .about-image {
+                    grid-column-start: 1;
+                    grid-row-start: 1;
+                }
+            }
+
+            .about-image::after {
+                display: none;
+            }
+
+            &:last-child {
+                grid-template-columns: 1fr;
+                gap: 0;
+                .about-image {
+                    width: unset;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-item {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &-content {
+            text-align: center !important;
+        }
+    }
+    
+    
+}

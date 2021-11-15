@@ -1,0 +1,64 @@
+.hero {
+    position: relative;
+    padding: 320px 180px;
+    background-image: url('../images/hero-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+    }
+
+    &-caption {
+        font-size: 45px;
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #fff;
+        font-family: 'Satisfy', cursive;
+    }
+
+    &-heading {
+        font-size: 85px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-caption {
+            font-size: 40px;
+        }
+        &-heading {
+            font-size: 56px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        height: 100vh;
+        &-caption {
+            font-size: 32px;
+        }
+        &-heading {
+            font-size: 40px;
+        }
+    }
+    
+    
+}

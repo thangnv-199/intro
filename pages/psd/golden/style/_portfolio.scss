@@ -1,0 +1,43 @@
+.portfolio {
+    background-color: #f7f7f7;
+    padding: 120px 0;
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px 40px;
+    }
+
+    &-item {
+        text-align: center;
+        background-color: #fff;
+    }
+
+    &-image {
+        margin-bottom: 30px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .title:hover {
+        color: $primary-color;
+    }
+
+    .caption {
+        font-size: 16px;
+        margin-bottom: 30px;
+        display: block;
+    }
+
+    @media screen and (max-width: 1023px) {
+        padding: 80px 0;
+    }
+
+    @media screen and (max-width: 767px) {
+        &-list {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    
+}

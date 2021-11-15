@@ -1,0 +1,49 @@
+.footer {
+
+    padding: 30px 0;
+
+    &-main {
+        display: flex;
+        align-items: center;
+        gap: 130px;
+    }
+
+    &-copyright {
+        color: $black-color;
+    }
+
+    &-social {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &-link {
+            width: 45px;
+            height: 45px;
+            background-color: $black-color;
+            display: flex;
+            border-radius: 100%;
+            border: 1px solid $black-color;
+            color: #fff;
+            transition: all 0.25s linear;
+
+            &:hover {
+                background-color: #fff;
+                color: $black-color;
+            }
+
+            i {
+                margin: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+    
+        &-main {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+    
+}

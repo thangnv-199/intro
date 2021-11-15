@@ -78,6 +78,10 @@ const render = {
             url: './pages/psd/octavian2/index.html',
             name: 'octavian2',
             imageSrc: './assets/images/octavian2.png',
+        }, {
+            url: './pages/psd/golden/index.html',
+            name: 'golden',
+            imageSrc: './assets/images/golden.png',
         }, ];
 
         this.skillData = [{
