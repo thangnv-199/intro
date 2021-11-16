@@ -1,0 +1,66 @@
+.contact {
+    background-color: #252e30;
+    padding: 100px 0;
+
+    &-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    .heading {
+        margin-bottom: 40px;
+        color: #fff;
+    }
+
+    &-content {
+        p {
+            margin-bottom: 30px;
+        }
+        .highlight {
+            color: #fff;
+            margin-right: 20px;
+        }
+    }
+
+    &-form {
+        &-label {
+            color: #fff;
+            display: block;
+        }
+
+        &-field {
+            display: block;
+            width: 100%;
+            background-color: $dark-color;
+            outline: none;
+            border: none;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        textarea {
+            min-height: 200px;
+        }
+        .button {
+            background-color: $black-color;
+            color: #fff;
+
+            &:hover {
+                background-color: #fff;
+                color: $black-color
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 60px 0;
+        &-main {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+}

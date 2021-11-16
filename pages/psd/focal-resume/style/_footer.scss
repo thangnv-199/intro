@@ -1,0 +1,37 @@
+.footer {
+    padding: 40px 0;
+    background-color: $black-color;
+    text-align: center;
+
+    &-copyright {
+        font-size: 14px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    &-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        &-link{
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            display: flex;
+            background-color: $dark-color;
+            &:hover {
+                i {
+                    color: #fff;
+                }
+            }
+        }
+
+        i {
+            color: $black-color;
+            margin: auto;
+            font-size: 14px;
+        }
+    }
+}

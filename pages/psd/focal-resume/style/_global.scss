@@ -1,0 +1,56 @@
+body {
+    color: $grey-color;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: percentage(30 / 18);
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.heading {
+    font-size: 30px;
+    color: $grey-dark-color;
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 22px;
+    line-height: percentage(24 / 22);
+    color: $grey-dark-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 40px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: all 0.25s linear;
+
+    &--primary {
+        color: $primary-color;
+        border: 2px solid $primary-color;
+
+        &:hover {
+            color: #fff;
+            background-color: $primary-color;
+        }
+    }
+}

@@ -12,6 +12,7 @@
     }
 
     &-icon {
+        position: relative;
         display: inline-block;
         border-radius: 100%;
         border: 3px solid $primary-color;
@@ -20,8 +21,14 @@
         display: flex;
         margin: auto;
         margin-bottom: 30px;
+        transition: bottom 0.25s linear;
+        bottom: 0;
         img {
             margin: auto;
+        }
+
+        &:hover {
+            bottom: 8px;
         }
     }
 

@@ -1,0 +1,119 @@
+.about {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    position: relative;
+
+    .heading {
+        margin-bottom: 40px;
+    }
+
+    &-header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 100px;
+    }
+
+    &-main {
+        display: grid;
+        grid-template-columns: 3fr 5fr;
+        gap: 30px;
+    }
+
+    &-image {
+        // position: absolute;
+        // left: 0;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-content {
+       
+        padding-top: 100px;
+        padding-left: 60px;
+        padding-bottom: 100px;
+        position: relative;
+        grid-column-start: 2;
+
+        &-main {
+            max-width: 680px;
+            padding-right: 20px;
+        }
+
+        &-bg {
+            background-color: $grey-light-color;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            left: 0;
+            transform: translateY(-50%)
+        }
+    }
+
+    &-description {
+        margin-bottom: 40px;
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    &-item {
+        display: flex;
+        gap: 20px;
+        i {
+            font-size: 32px;
+            color: $primary-color;
+        }
+    }
+
+    &-title {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-header {
+            grid-template-columns: 1fr;
+            .heading {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-image {
+            img {
+                margin: 0 auto 40px;
+            }
+        }
+
+        &-main {
+            display: unset;
+        }
+        &-content {
+            padding: 0 20px;
+            &-main {
+                max-width: unset;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-list {
+            grid-template-columns: 1fr;
+        }
+
+        &-content {
+            &-main {
+                padding: 0;
+            }
+        }
+    }
+    
+    
+}

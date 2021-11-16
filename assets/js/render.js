@@ -82,6 +82,10 @@ const render = {
             url: './pages/psd/golden/index.html',
             name: 'golden',
             imageSrc: './assets/images/golden.png',
+        }, {
+            url: './pages/psd/focal-resume/index.html',
+            name: 'focal',
+            imageSrc: './assets/images/focal.png',
         }, ];
 
         this.skillData = [{

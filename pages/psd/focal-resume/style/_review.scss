@@ -1,0 +1,47 @@
+.review {
+    padding: 100px 0;
+    text-align: center;
+    background-color: $grey-light-color;
+
+    &-content {
+        font-style: italic;
+        font-size: 24px;
+        max-width: 80%;
+        margin: 0 auto 30px;
+    }
+
+    &-name {
+        font-weight: bold;
+    }
+
+    .slick-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        li.slick-active {
+            button {
+                background-color: $primary-color;
+            }
+        }
+
+        button {
+            border: none;
+            outline: none;
+            background-color: rgba($primary-color, 0.5);
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 60px 0;
+        &-content {
+            max-width: unset;
+        }
+    }
+    
+}

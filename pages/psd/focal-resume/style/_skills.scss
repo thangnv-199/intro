@@ -1,0 +1,51 @@
+.skills {
+    margin-bottom: 100px;
+    .heading {
+        margin-bottom: 40px;
+    }
+
+    &-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    &-description {
+        margin-bottom: 50px;
+    }
+
+    &-process {
+        &-title {
+            margin-bottom: 20px;
+        }
+
+        &-bar {
+            height: 30px;
+            background-color: $grey-light-color;
+            position: relative;
+            color: #fff;
+            margin-bottom: 40px;
+
+            .processing {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: var(--processing);
+                background-color: $primary-color;
+                text-align: right;
+                padding-right: 10px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 60px;
+        &-main {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+}

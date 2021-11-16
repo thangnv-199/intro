@@ -97,9 +97,9 @@ const app = {
     renderServices: function(data, container) {
         const html = data.map(({ imageSrc, title, description }) => (`
             <li class="services-item">
-                <div class="services-icon">
+                <a href="#!" class="services-icon">
                     <img src="${imageSrc}" alt="">
-                </div>
+                </a>
                 <h3 class="services-title title">${title}</h3>
                 <p class="services-description">${description}</p>
             </li>
