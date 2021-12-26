@@ -15,6 +15,9 @@ html{
 
 .main{
     overflow: hidden;
+    max-width: 1600px;
+    padding: 0 20px;
+    margin: 0 auto;
 }
 /* header */
 .header{
@@ -28,6 +31,7 @@ html{
     height: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header-nav__left,
@@ -63,6 +67,9 @@ html{
     font-size: 1.2rem;
     line-height: 4rem;
     letter-spacing: 1px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
 }
 
 .header-nav__left-icon{
@@ -97,6 +104,13 @@ html{
     color: var(--text-color);
     letter-spacing: 1px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-subnav-item:hover {
+    background-color: #f8f8f8;
 }
 
 .header-nav__left-item:hover .header-subnav{

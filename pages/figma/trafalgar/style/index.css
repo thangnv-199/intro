@@ -935,7 +935,7 @@ ul {
           transform: translate(-40%, -20%);
 }
 
-.review .slick-dots {
+.review .nvt-dots {
   position: absolute;
   bottom: -100px;
   left: 50%;
@@ -951,23 +951,25 @@ ul {
   gap: 18px;
 }
 
-.review .slick-dots button {
+.review .nvt-dot {
   background-color: #5B9BF3;
   opacity: 0.4;
-  width: 10px;
-  height: 10px;
   border-radius: 100%;
   font-size: 0;
   border: none;
   outline: none;
   cursor: pointer;
+  width: 10px;
+  height: 10px;
 }
 
-.review .slick-dots .slick-active button {
+.review .nvt-dot.--active {
   opacity: 1;
+  height: 16px;
+  width: 16px;
 }
 
-.review .slick-arrow {
+.review .nvt-arrow {
   position: absolute;
   bottom: -100px;
   left: 50%;
@@ -981,14 +983,14 @@ ul {
   cursor: pointer;
 }
 
-.review .slick-next {
+.review .arrow-next {
   -webkit-transform: translateX(160px);
           transform: translateX(160px);
   left: auto;
   right: 50%;
 }
 
-.review .slick-prev {
+.review .arrow-prev {
   -webkit-transform: translateX(-160px);
           transform: translateX(-160px);
 }
@@ -1000,6 +1002,11 @@ ul {
   .review-main {
     padding: 30px;
   }
+  .review-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 34px;
+  }
   .review-avatar {
     width: 100px;
     height: 100px;
@@ -1007,11 +1014,6 @@ ul {
 }
 
 @media screen and (max-width: 767px) {
-  .review-content {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    gap: 34px;
-  }
   .review-description {
     font-size: 16px;
   }

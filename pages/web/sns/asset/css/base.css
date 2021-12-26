@@ -203,36 +203,6 @@
     transform: translateY(0);
 }
 
-/* slider */
-
-#slides {
-    margin-bottom: 0;
-}
-
-#slides img {
-    width: 100%;
-}
-
-.content__head-left .slick-dots {
-    position: absolute;
-    bottom: 0;
-}
-
-.content__head-left .slick-dots button {
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    border: 1px solid #000;
-}
-
-.content__head-left .slick-dots button::before {
-    display: none;
-}
-
-.content__head-left .slick-dots .slick-active button {
-    background-color: var(--primary-color);
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;

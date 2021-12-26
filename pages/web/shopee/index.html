@@ -13,14 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <link rel="stylesheet" href="../../../assets/lib/slider/slider.min.css">
     <link rel="stylesheet" href="./style/index.css">
 
-    <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
-    </script>
+    <script src="../../../assets/lib/slider/slider.min.js"></script>
 </head>
 
 <body>
@@ -125,27 +122,14 @@
 
         <main class="body">
             <div class="banner">
-                <div class="banner-slider slider">
-                    <div class="slider-track">
-                        <div class="slider-list">
-
-                        </div>
-                    </div>
-                    <button class="slider-prev-button --disabled">
-                        <i class="fa fa-angle-left"></i>
-                    </button>
-                    <div class="dots">
-                       
-                    </div>
-                    <button class="slider-next-button">
-                        <i class="fa fa-angle-right"></i>
-                    </button>
+                <div class="banner-slider">
+                    
                 </div>
                 <div class="banner-right">
-                    <div class="banner-right-item">
+                    <a href="#!">
                         <img src="./images/banner/3aefa318065e9ab4a997e35486c7903d_xhdpi.png" alt="">
-                    </div>
-                    <div class="banner-right-item">
+                    </a>
+                    <a href="#!">
                         <img src="./images/banner/dce393a86d6474fb85dd7fbf7f46b9f4_xhdpi.png" alt="">
                     </div>
                 </div>
@@ -235,23 +219,7 @@
                         </a>
                     </div>
                     <div class="mall-body">
-                        <div class="mall-slider slider">
-                            <div class="slider-track">
-                                <div class="slider-list">
-
-                                </div>
-                            </div>
-                            <button class="slider-prev-button --disabled">
-                                <i class="fa fa-angle-left"></i>
-                            </button>
-                            <div class="dots">
-                                <div class="dot --active"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <button class="slider-next-button">
-                                <i class="fa fa-angle-right"></i>
-                            </button>
+                        <div class="mall-slider banner-slider">
                         </div>
                         <div class="mall-directory">
                             <ul class="mall-directory-list">
@@ -617,9 +585,7 @@
         
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./js/generate.js"></script>
-    <script src="./js/slider.js"></script>
+    <script src="./js/render.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

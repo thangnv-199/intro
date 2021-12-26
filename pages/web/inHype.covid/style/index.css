@@ -295,8 +295,7 @@ body {
 }
 
 .header-social i {
-  padding: 16px;
-  font-size: 20px;
+  padding: 12px;
 }
 
 .header-search i {
@@ -707,6 +706,10 @@ body {
   word-break: break-word;
 }
 
+.post4-list .nvt-dots {
+  margin-top: 20px;
+}
+
 .post5-list {
   display: -ms-grid;
   display: grid;
@@ -1048,6 +1051,10 @@ body {
 .trending-subtitle {
   font-weight: 500;
   font-size: 12px;
+}
+
+.trending .nvt-dots {
+  margin-top: 20px;
 }
 
 .footer {

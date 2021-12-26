@@ -21,7 +21,7 @@
         background-color: white;
         padding: 80px 70px 50px;
         line-height: 1.6;
-        flex: 1 0 66%;
+        flex: 0 0 66%;
         border-radius: 20px;
     }
 
@@ -110,7 +110,7 @@
 
         &-item {
             padding: 40px 50px 40px;
-            flex: 1 0 90%;
+            flex: 0 0 90%;
         }
         .heading {
             margin-bottom: 50px;
@@ -130,7 +130,7 @@
         &-item {
             padding: 20px;
             flex-direction: column;
-            flex: 1 0 100%;
+            flex: 0 0 100%;
         }
 
         &-description {

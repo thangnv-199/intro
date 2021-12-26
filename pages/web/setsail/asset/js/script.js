@@ -49,14 +49,10 @@ const scrollTopBtn = _$(".scroll-top");
 window.onscroll = () => {
     if (window.scrollY < 100) {
         headerTop.hidden = false;
-        $(elementSubnavElement).css({
-            top: "120px",
-        });
+        elementSubnavElement.style.top = '120px'; 
     } else {
         headerTop.hidden = true;
-        $(elementSubnavElement).css({
-            top: "80px",
-        });
+        elementSubnavElement.style.top = '80px'; 
     }
 
     if (window.scrollY < 1000) {
@@ -152,19 +148,18 @@ mobileSubnavLv2Links.forEach((item, index) => {
 
 
 
-$(".scroll-top").click(() => {
-    $("html").animate({
-        scrollTop: 0
-    })
-})
+// $(".scroll-top").click(() => {
+//     $("html").animate({
+//         scrollTop: 0
+//     })
+// })
 // content slider
 
-$(".content-tour").slick({
+createSlider(document.querySelector('.content-tour'), {
     slidesToShow: 4,
     slidesToScroll: 4,
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    arrows: false,
     responsive: [{
             breakpoint: 1023,
             settings: {
@@ -180,21 +175,23 @@ $(".content-tour").slick({
             }
         }
     ],
-});
+})
 
-$(".topReview__list").slick({
-    slidesToShow: 3,
-    slidesToScroll: 3,
+createSlider(document.querySelector('.content-user-feedback'), {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: false,
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    responsive: [{
-            breakpoint: 1023,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-            }
-        },
+})
+
+createSlider(document.querySelector('.topReview__list'), {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    dots: true,
+    arrows: false,
+    infinite: true,
+    responsive: [
         {
             breakpoint: 739,
             settings: {
@@ -203,11 +200,11 @@ $(".topReview__list").slick({
             }
         }
     ],
-});
+})
 
-$(".content-user-feedback").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-});
+// $(".content-user-feedback").slick({
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 5000,
+// });

@@ -441,6 +441,7 @@
 .tour__item{
     position: relative;
     margin-bottom: 20px;
+    padding: 0 10px;
 }
 .tour__img-info{
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -522,7 +523,6 @@
 /* top review */
 
 .content-topReview{
-    height: 120vh;
     background-image: url(../img/h1-parallax-img-2.jpg);
     background-size: cover;
     background-position: center;
@@ -556,13 +556,12 @@
     padding: 0 20px;
     cursor: grabbing;
     margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 .topReview__item-img{
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
     background-color: #fff;
-    padding: 20px 20px 0 20px;
+    padding: 20px;
 }
 
 .topReview__item-img img{
@@ -570,8 +569,6 @@
 }
 
 .topReview__info{
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
     background-color: #fff;
     padding: 20px;
 

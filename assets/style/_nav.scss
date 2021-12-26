@@ -1,0 +1,100 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+
+    &-wrapper {
+        position: absolute;
+        width: 160px;
+    }
+
+    border-radius: 20px;
+    padding: 30px;
+    background-image: linear-gradient(to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3));
+
+    &-item {
+        text-align: center;
+        padding: 12px;
+        border-radius: 20px;
+        background-color: rgba(235, 240, 243, 0.8);
+        cursor: pointer;
+        transition: all 0.4s linear;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        lord-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        span {
+            font-weight: bold;
+
+        }
+
+        &.--active {
+            background-image: linear-gradient(142.17deg, #4f93f1 6.66%, #de30fd 91.48%);
+            box-shadow: inset -0.25rem -0.25rem 0.3125rem rgba(0, 0, 0, 0.1), inset 0.25rem 0.25rem 0.3125rem rgba(255, 255, 255, 0.2);
+        }
+
+        &:hover:not(.--active) {
+            background-image: linear-gradient(142.17deg, rgba(79, 147, 241, 0.3) 6.66%, rgba(222, 48, 253, 0.3) 91.48%);
+        }
+    }
+
+    @media screen and (max-width: 1023.98px) {
+        flex-direction: row;
+        padding: 20px;
+
+        &-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        &-item {
+            flex: 1;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        padding: 12px;
+        background-image: linear-gradient(360deg, #58aec3, #ccdde4);
+        border-radius: 0;
+        height: 80px;
+
+        &-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: unset;
+            z-index: 100;
+        }
+
+        lord-icon {
+            width: 40px;
+            height: 40px;
+
+        }
+
+        &-item {
+            padding: 0;
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+
+
+}

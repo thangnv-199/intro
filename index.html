@@ -15,15 +15,11 @@
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="./assets/lib/slider/slider.min.css">
     <link rel="stylesheet" href="./assets/style/index.css">
 
+    <script src="./assets/lib/slider/slider.min.js"></script>
     <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
-    <!-- <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
-    </script> -->
 </head>
 
 <body>
@@ -78,6 +74,22 @@
             </div>
         </header>
 
+        <div class="modal">
+            <div class="modal-overlay"></div>
+            <div class="container">
+                <div class="modal-main">
+                    <div class="modal-content">
+                        <video 
+                            class="modal-video"
+                            controls
+                            preload="metadata"
+                            src="">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <main class="body">
             <div class="container">
                 <div class="body-main">
@@ -89,12 +101,12 @@
                                 </lord-icon>
                                 <span>Bản thân</span>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <lord-icon src="https://cdn.lordicon.com/wxnxiano.json" trigger="morph-two-way"
                                     colors="primary:#263da3,secondary:#4e2099">
                                 </lord-icon>
                                 <span>Học vấn</span>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <lord-icon src="https://cdn.lordicon.com/iltqorsz.json" trigger="morph-two-way"
                                     colors="primary:#263da3,secondary:#4e2099">
@@ -120,21 +132,77 @@
                                     corrupti voluptatum laborum, maiores quibusdam maxime iure, veritatis ex explicabo
                                     aut sint, aliquid aliquam eius perferendis et consequuntur.</p>
                             </div>
+                            <div class="skill">
+                                <h2 class="skill-heading">Kĩ năng của tôi</h2>
+                                <div class="skill-list">
+
+                                </div>
+                            </div>
                             <h2 class="heading --sub">Mình đã làm được</h2>
-                            <div class="slider --style1 js-slider">
+                            <div class="slider js-slider">
                                 <h2 class="slider-heading">JAVASCRIT</h2>
                                 <div class="slider-track">
                                     <div class="slider-list">
-                                        <!-- <div class="slider-item">
-                                            <a href="#!" class="slider-image">
-                                                <img src="./assets/images/game.png" alt="">
-                                            </a>
-                                            <h3 class="slider-title">Game tổng hợp</h3>
-                                        </div> -->
+                                     
                                     </div>
                                 </div>
                             </div>
-                            <div class="slider --style1 figma-slider">
+
+                            <div class="slider react-slider">
+                                <h2 class="slider-heading">Reactjs</h2>
+                                <div class="slider-track">
+                                    <div class="slider-list">
+                                        <div class="slider-item">
+                                            <div class="slider-link">
+                                                <img src="./assets/images/zingmp3.png" alt="">
+                                                <div class="slider-overlay">
+                                                    <a href="https://thangnv-199.github.io/zingmp3/" target="_blank">Tới trang web</a>
+                                                    <button data-src="./assets/videos/zingmp3-intro.mp4" class="open-modal-button">
+                                                        Xem video demo
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <h4 class="slider-title">zingmp3 (Đang bị lỗi API)</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider nodejs-slider">
+                                <h2 class="slider-heading">Nodejs</h2>
+                                <div class="slider-track">
+                                    <div class="slider-list">
+                                        <div class="slider-item">
+                                            <div class="slider-link">
+                                                <img src="./assets/images/boo.png" alt="">
+                                                <div class="slider-overlay">
+                                                    <button data-src="./assets/videos/boo-user-demo.mp4" class="open-modal-button">
+                                                        Xem video demo phía khách hàng
+                                                    </button>
+                                                    <button data-src="./assets/videos/boo-admin-demo.mp4" class="open-modal-button">
+                                                        Xem video demo phía admin
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <h4 class="slider-title">Website bán hàng (boo.vn)</h4>
+                                            <p>Nodejs, MongoDB, Bootstrap</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="modal">
+                                <div class="modal-content">
+                                    <video 
+                                        class="modal-video"
+                                        controls
+                                        preload="metadata"
+                                        src="./assets/videos/zingmp3-intro.mp4">
+                                    </video>
+                                </div>
+                            </div> -->
+
+                            <div class="slider figma-slider">
                                 <h2 class="slider-heading">HTML, CSS</h2>
                                 <h3 class="slider-subheading">Figma to HTML</h3>
                                 <div class="slider-track">
@@ -143,7 +211,7 @@
                                 </div>
                             </div>
 
-                            <div class="slider --style1 web-slider">
+                            <div class="slider web-slider">
                                 <h3 class="slider-subheading">Web to HTML</h3>
                                 <div class="slider-track">
                                     <div class="slider-list">
@@ -151,7 +219,7 @@
                                 </div>
                             </div>
 
-                            <div class="slider --style1 psd-slider">
+                            <div class="slider psd-slider">
                                 <h3 class="slider-subheading">PSD to HTML</h3>
                                 <div class="slider-track">
                                     <div class="slider-list">
@@ -160,7 +228,7 @@
                             </div>
                         </div>
 
-                        <div class="education tab">
+                        <!-- <div class="education tab">
                             <h1 class="heading --main">Học vấn</h1>
                             <div class="title">
                                 <img src="./assets/images/icon-education.svg" alt="" class="title-image">
@@ -220,9 +288,9 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="target tab">
+                        <div class="target tab ">
                             <h1 class="heading --main">Mục tiêu</h1>
                             <ul class="timeline">
                                 <li class="timeline-item">
@@ -278,23 +346,8 @@
                             </ul>
 
                             <h2 class="heading --sub">Những câu nói truyền cảm hứng</h2>
-                            <div class="slider --style2 inspirationSlider">
-                                <div class="slider-track">
-                                    <ul class="slider-list">
-                                        
-                                    </ul>
-                                </div>
-                                <div class="slider-nav">
-                                    <button class="arrow prev --disabled">
-                                        <i class="fas fa-long-arrow-alt-left"></i>
-                                    </button>
-                                    <div class="dots">
-
-                                    </div>
-                                    <button class="arrow next">
-                                        <i class="fas fa-long-arrow-alt-right"></i>
-                                    </button>
-                                </div>
+                            <div class="inspirationSlider slider2">
+                               
                             </div>
                         </div>
 
@@ -306,42 +359,13 @@
                                     <h2>Đọc sách </h2>
                                 </div>
                                 <h3 class="heading --sub">Truyện trinh thám</h3>
-                                <div class="slider --style2 detectiveStoreSlider">
-                                    <div class="slider-track">
-                                        <ul class="slider-list">
-                                        </ul>
-                                    </div>
-                                    <div class="slider-nav">
-                                        <button class="arrow prev --disabled">
-                                            <i class="fas fa-long-arrow-alt-left"></i>
-                                        </button>
-                                        <div class="dots">
-
-                                        </div>
-                                        <button class="arrow next">
-                                            <i class="fas fa-long-arrow-alt-right"></i>
-                                        </button>
-                                    </div>
+                                <div class="detectiveStoreSlider">
+                                    
                                 </div>
 
                                 <h3 class="heading --sub">Tác phẩm kinh điển</h3>
-                                <div class="slider --style2 classicStoreSlider">
-                                    <div class="slider-track">
-                                        <ul class="slider-list">
-
-                                        </ul>
-                                    </div>
-                                    <div class="slider-nav">
-                                        <button class="arrow prev --disabled">
-                                            <i class="fas fa-long-arrow-alt-left"></i>
-                                        </button>
-                                        <div class="dots">
-
-                                        </div>
-                                        <button class="arrow next">
-                                            <i class="fas fa-long-arrow-alt-right"></i>
-                                        </button>
-                                    </div>
+                                <div class="classicStoreSlider">
+                                   
                                 </div>
                             </div>
                             <div class="favorite-block">
@@ -349,9 +373,9 @@
                                     <img src="./assets/images/film.png" alt="" class="title-image">
                                     <h2>Manga & Anime</h2>
                                 </div>
-                                <ul class="favorite-list film">
+                                <div class="favorite-film-list">
 
-                                </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -362,7 +386,6 @@
     </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="./assets/js/render.js"></script>
-    <script src="./assets/js/slider.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 

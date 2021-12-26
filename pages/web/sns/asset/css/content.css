@@ -1,5 +1,22 @@
 /* content */
 
+#slides .nvt-dots {
+    bottom: 5px;
+    position: absolute;
+}
+
+#slides .nvt-dot {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: unset;
+    opacity: 1;
+}
+
+#slides .nvt-dot.--active {
+    background-color: var(--primary-color);
+}
 
 /* content head */
 .content .content__head-left {
@@ -107,11 +124,36 @@
 }
 
 /* content products list */
+.suggest-collection-list {
+    position: relative;
+}
+
+.suggest-collection-list .nvt-arrow {
+    position: absolute;
+    border: none;
+    outline: none;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background-color: transparent;box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.suggest-collection-list .nvt-arrow.arrow-prev {
+    left: 0;
+}
+
+.suggest-collection-list .nvt-arrow.arrow-next {
+    right: 0;
+}
 
 .content-products {
     transition: all 0.5s linear;
     text-align: center;
     overflow: hidden;
+    padding: 0 10px;
 }
 
 .content-products:hover .addToCart{
@@ -197,7 +239,7 @@
     padding: 12px 0;
     background-color: #333;
     color: #fff;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     font-weight: bold;
     transition: transform 0.3s linear;
 }
@@ -319,6 +361,7 @@
 }
 
 .content-banner__img{
+    object-fit: cover;
     width: 100%;
 }   
 
@@ -331,6 +374,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .mostView__title,
@@ -339,18 +383,20 @@
     letter-spacing: 1px;
 }
 
-.mostView-btns i,
-.lastPost-btns i{
+.mostView-btns .nvt-arrow,
+.lastPost-btns .nvt-arrow{
+    outline: none;
+    background-color: transparent;
     border: 1px solid var(--border-color);
     font-size: 1.6rem;
     padding: 4px 8px;
     color: var(--text-color);
     cursor: pointer;
-
+    margin: 0 2px;
 }
 
-.mostView-btns i:hover,
-.lastPost-btns i:hover{
+.mostView-btns .nvt-arrow:hover,
+.lastPost-btns .nvt-arrow:hover{
     background-color: var(--primary-color);
     color: #fff;
 }
@@ -420,6 +466,9 @@
     margin-bottom: 40px;
 }
 
+.lastPost__item {
+    padding: 0 10px;
+}
 
 .lastPost__img{
     width: 100%;
@@ -467,6 +516,16 @@
     color: #000;
     font-size: 1.4rem;
     font-weight: bold;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.lastPost__link:hover {
+    color: var(--primary-color);
 }
 
 .lastPost__text{

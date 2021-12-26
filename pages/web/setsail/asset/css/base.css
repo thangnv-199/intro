@@ -55,17 +55,6 @@ body{
     font-weight: bold;
 }
 
-
-
-.content-tour .slick-next:before,
-.content-tour .slick-prev:before,
-.content-topReview .slick-next:before,
-.content-topReview .slick-prev:before{
-    display: none;
-}
-
-
-
 .header__top .hvr-underline-from-left::before{
     background-color: #fff;
     height: 3px;
@@ -81,51 +70,15 @@ body{
     height: 2px;
 }
 
-.content .slick-dots li button{
+.content .nvt-dot{
     background-color: var(--primary-color);
-    border-radius: 100%;
-    opacity: 0.5;
-    height: 12px;
     width: 12px;
-}
-.slick-dots li button:before{
-    color: transparent;
-}
-.content .slick-dots .slick-active{
-    border-radius: 100%;
-    background-color: var(--primary-color);
     height: 12px;
-    width: 12px;
 }
 
-.content .slick-dots li{
-    height: 12px;
-    width: 12px;
-    overflow: hidden;
+.content .nvt-dot.--active {
+    width: 16px;height: 16px;
 }
-
-.content .slick-dots li.slick-active button:before{
-    color: transparent;
-    height: 12px;
-    width: 12px;
-}
-
-.content .slick-next:before,
-.content .slick-prev:before{
-    color: var(--primary-color);
-    font-size: 5rem;
-}
-
-.content .slick-next:before{
-    right: 30px;
-    position: relative;
-}
-
-.content .slick-next:before:hover,
-.content .slick-prev:before:hover{
-    opacity: 0.8;
-}
-
 
 
 @keyframes grow {

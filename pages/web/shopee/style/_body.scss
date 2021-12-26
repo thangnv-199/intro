@@ -12,6 +12,65 @@
     margin: 0 auto;
     padding: 0 12px;
     margin-bottom: 10px;
+
+    &-slider {
+        border-radius: 4px;
+        .nvt-dots {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .nvt-arrow {
+            display: none;
+            position: absolute;
+            transition: all 0.4s linear;
+            top: 50%;
+            border: none;
+            outline: none;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.4);
+            i {
+                font-size: 24px;
+                color: #fff;
+            }
+    
+            &.--disabled {
+                pointer-events: none;
+                display: none !important;
+                
+                i {
+                    color: #aaa;
+                }
+            }
+        }
+
+        .arrow-prev {
+            left: 0;
+        }
+        .arrow-next {
+            right: 0;
+        }
+
+        .nvt-dot {
+            background-color: rgba(255, 255, 255, 0.8);
+
+            &.--active {
+                background-color: $primary-color;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+        }
+
+        &:hover {
+            .nvt-arrow {
+                display: block;
+            }
+        }
+    }
     
 
     img {
@@ -31,13 +90,6 @@
     background-color: #fff;
     border-radius: 4px;
     margin-bottom: 20px;
-
-    &-list {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        align-items: center;
-        min-height: 108px;
-    }
 
     &-item {
         height: 100%;
@@ -69,6 +121,13 @@
         span {
             font-size: 13px;
         }
+    }
+}
+
+.feature {
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
     }
 }
 
@@ -147,11 +206,6 @@
     &-list {
         display: block;
         position: relative;
-        &:hover {
-            .next-button, .prev-button {
-                transform: scale(2);
-            }
-        }
     }
 
     &-item {

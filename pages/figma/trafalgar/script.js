@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
         bgMenu.classList.remove('--active');
     })
 
-    $('.review-list').slick({
+    createSlider(document.querySelector('.review-list'), {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        prevArrow:"<button type='button' class='slick-prev slick-arrow'><i class='fas fa-long-arrow-alt-left' aria-hidden='true'></i></button>",
-        nextArrow:"<button type='button' class='slick-next slick-arrow'><i class='fas fa-long-arrow-alt-right' aria-hidden='true'></i></button>"
-      });
+        arrows: true,
+        prevArrow:"<i class='fas fa-long-arrow-alt-left' aria-hidden='true'></i>",
+        nextArrow:"<i class='fas fa-long-arrow-alt-right' aria-hidden='true'></i>"
+    
+    })
 })

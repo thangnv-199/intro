@@ -7,6 +7,7 @@ const nav = document.querySelector('.nav');
 const tabs = document.querySelectorAll('.tab');
 const navBtns = document.querySelectorAll('.nav-item');
 const content = document.querySelector('.content');
+const modal = document.querySelector('.modal');
 
 
 const app = {
@@ -17,7 +18,7 @@ const app = {
     handleEvents: function () {
         [jsSliderTrack, figmaSliderTrack, webSliderTrack, psdSliderTrack].forEach(slider => {
             this.draggbleAxisX(slider);
-            slider.querySelectorAll('.slider-image').forEach(image => {
+            slider.querySelectorAll('.slider-link').forEach(image => {
                 image.addEventListener('click', (e) => {
                     this.isSliderDraggable && e.preventDefault();
                 })
@@ -37,18 +38,15 @@ const app = {
             })
         })
 
-        // this.observe(nav, () => {
-        //     const position = nav.getBoundingClientRect();
-        //     if (position.top < 0) {
-        //         nav.style.position = 'fixed';
-        //         nav.style.top = '30px';
-        //         console.log(1)
-        //     } else {
-        //         console.log(2)
-        //     }
-        // }, {
-        //     threshold: 1,
-        // })
+        document.querySelectorAll('.open-modal-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.openModal(btn.dataset.src);
+            })
+        })
+
+        modal.querySelector('.modal-overlay').addEventListener('click', () => {
+            this.closeModal();
+        })
     },
 
     contentScrollToTop: function() {
@@ -62,11 +60,14 @@ const app = {
         })
     },
 
-    observe: function(element, callback, options) {
-        const observers = new IntersectionObserver((entries, observer) => {
-            entries.forEach(callback)
-        }, options)
-        observers.observe(element);
+    openModal: function(src) {
+        modal.classList.add('--open');
+        modal.querySelector('.modal-video').src = src;
+    },
+
+    closeModal: function() {
+        modal.classList.remove('--open');
+        modal.querySelector('.modal-video').src = '';
     },
 
     draggbleAxisX: function (element) {
@@ -100,9 +101,22 @@ const app = {
         });
     },
 
+    initSlider: function (element) {
+        createSlider(element, {
+            infinite: true,
+            dots: true,
+            slidesToShow: 1,
+            prevArrow: '<i class="fas fa-long-arrow-alt-left"></i>',
+            nextArrow: '<i class="fas fa-long-arrow-alt-right"></i>',
+        });
+    },
+
     start: function () {
         this.init();
         this.handleEvents();
+        this.initSlider(inspirationSlider);
+        this.initSlider(detectiveStoreSlider);
+        this.initSlider(classicStoreSlider);
     },
 }
 

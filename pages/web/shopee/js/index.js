@@ -1,24 +1,22 @@
-const suggestionsMoreBtn = document.querySelector('.suggestions-more');
-
-
 const app = {
     init: function () {
 
     },
 
     handleEvents: function () {
-        suggestionsMoreBtn.addEventListener('click', () => {
+        document.querySelector('.suggestions-more').addEventListener('click', () => {
             const LIMIT = 12;
-            const lengt = generate.suggestionsData.length;
+            const length = render.suggestionsData.length;
             for (let i = 0; i < LIMIT; i++) {
-                const random = Math.floor(Math.random() * lengt);
-                const product = generate.suggestionsData[random];
-                $('.suggestions-list').append(this.loadSuggestionsProduct(product));
+                const random = Math.floor(Math.random() * length);
+                const product = render.suggestionsData[random];
+                
+                suggestionsList.innerHTML += this.suggestionsProduct(product);
             }
         })
     },
 
-    loadSuggestionsProduct: function({sale, imageSrc, name, price, selled}) {
+    suggestionsProduct: function({sale, imageSrc, name, price, selled}) {
         return `
             <a href="#!" class="product">
                 <span class="sale-logo">
@@ -45,9 +43,105 @@ const app = {
         `;
     },
 
+    initialSlider: function() {
+        createSlider(bannerSlider1List, {
+            arrows: true,
+            infinite: true,
+            autoplay: true,
+            pauseOnHover: true,
+            draggable: false,
+            prevArrow: '<i class="fas fa-chevron-left"></i>',
+            nextArrow: '<i class="fas fa-chevron-right"></i>',
+        })
+
+        createSlider(bannerSlider2List, {
+            arrows: true,
+            infinite: true,
+            autoplay: true,
+            pauseOnHover: true,
+            draggable: false,
+            prevArrow: '<i class="fas fa-chevron-left"></i>',
+            nextArrow: '<i class="fas fa-chevron-right"></i>',
+        })
+        createSlider(directoryList, {
+            infinite: false,
+            arrows: true,
+            dots: false,
+            slidesToShow: 10,
+            slidesToScroll: 10,
+            prevArrow: '<i class="fas fa-chevron-left"></i>',
+            nextArrow: '<i class="fas fa-chevron-right"></i>',
+            responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 6,
+                  }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                      slidesToShow: 4,
+                      slidesToScroll: 4,
+                    }
+                  },
+              ],
+        })
+
+        createSlider(flashSaleList, {
+            infinite: false,
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            dots: false,
+            prevArrow:"<i class='fa fa-angle-left' aria-hidden='true'>",
+            nextArrow:"<i class='fa fa-angle-right' aria-hidden='true'>",
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    }
+                },
+            ]
+        })
+
+        createSlider(searchTopList, {
+            infinite: false,
+            dots: false,
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            prevArrow:"<i class='fa fa-angle-left' aria-hidden='true'>",
+            nextArrow:"<i class='fa fa-angle-right' aria-hidden='true'></i>",
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    }
+                },
+            ]
+        })
+    },
+
     start: function () {
         this.init();
         this.handleEvents();
+        this.initialSlider();
     },
 
 }

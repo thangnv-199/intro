@@ -198,7 +198,7 @@ const app = {
             createdAt: 'Sponsored',
             readTime: 3,
         }, ];
-        this.clodePost3Data = this.post3Data;
+        this.clonePost3Data = this.post3Data;
 
         this.post4Data = [{
             imageSrc: './images/qi7uskbzy_a-555x360.jpg',
@@ -463,12 +463,12 @@ const app = {
 
     handleEvents: function () {
         post3Button.addEventListener('click', () => {
-            this.post3Data = [...this.post3Data, ...this.clodePost3Data];
-            this.generatePost(this.post3Data, postList3);
+            this.post3Data = [...this.post3Data, ...this.clonePost3Data];
+            this.renderPost(this.post3Data, postList3);
         })
     },
 
-    generatePost: function (data, container) {
+    renderPost: function (data, container) {
         const html = data.map(({
             imageSrc,
             tags,
@@ -514,7 +514,7 @@ const app = {
         container.innerHTML = html;
     },
 
-    generateHeadlineSlider: function (data) {
+    renderHeadlineSlider: function (data) {
         const html = data.map(({
             imageSrc,
             tags,
@@ -559,7 +559,7 @@ const app = {
         headlineSlider.innerHTML = html;
     },
 
-    generateBuy: function (data) {
+    renderBuy: function (data) {
         const html = data.map(({
             imageSrc,
             tags,
@@ -590,79 +590,87 @@ const app = {
         buyList.innerHTML = html;
     },
 
-    generates: function () {
-        this.generatePost(this.post1Data, postList1);
-        this.generatePost(this.post2Data, postList2);
-        this.generatePost(this.post3Data, postList3);
-        this.generatePost(this.post4Data, postList4);
-        this.generatePost(this.post5Data, postList5);
-        this.generatePost(this.latestData, latestList);
-        this.generatePost(this.popularData, popularList);
-        this.generatePost(this.trendingData, trendingList);
-        this.generateHeadlineSlider(this.headlineSliderData);
-        this.generateBuy(this.buyData);
+    renders: function () {
+        this.renderPost(this.post1Data, postList1);
+        this.renderPost(this.post2Data, postList2);
+        this.renderPost(this.post3Data, postList3);
+        this.renderPost(this.post4Data, postList4);
+        this.renderPost(this.post5Data, postList5);
+        this.renderPost(this.latestData, latestList);
+        this.renderPost(this.popularData, popularList);
+        this.renderPost(this.trendingData, trendingList);
+        this.renderHeadlineSlider(this.headlineSliderData);
+        this.renderBuy(this.buyData);
+    },
+
+    initialSlider: function() {
+        createSlider(headlineSlider, {
+            dots: false,
+            arrows: false,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            pauseOnHover: true,
+        })
+
+        createSlider(postList4, {
+            infinite: true,
+            arrows: false,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            pauseOnHover: true,
+            responsive: [
+                {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+                },{
+                    breakpoint: 767,
+                    settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    }
+                },
+            ]
+        })
+
+        createSlider(trendingList, {
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            pauseOnHover: true,
+            responsive: [
+                {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+                },{
+                    breakpoint: 767,
+                    settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    }
+                },
+            ]
+        })
     },
 
 
     start: function () {
         this.init();
-        this.generates();
+        this.renders();
         this.handleEvents();
+        this.initialSlider();
     }
 }
 
 app.start();
-
-
-$('.headline-slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    // autoplay: true,
-    // autoplaySpeed: 5000,
-});
-
-$('.post4 .post4-list').slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    arrows: false,
-    responsive: [
-        {
-          breakpoint: 1023,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          }
-        },{
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            }
-        },
-    ]
-});
-
-$('.trending .trending-list').slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    arrows: false,
-    responsive: [
-        {
-          breakpoint: 1023,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          }
-        },{
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            }
-        },
-    ]
-});

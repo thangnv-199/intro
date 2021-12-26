@@ -4,14 +4,14 @@ const webProductList = document.querySelector('.web-slider .slider-list');
 const psdProductList = document.querySelector('.psd-slider .slider-list');
 
 const skillList = document.querySelector('.skill-list');
-const inspirationList = document.querySelector('.inspirationSlider .slider-list');
 
-const detectiveStoreList = document.querySelector('.detectiveStoreSlider .slider-list');
-const classicStoreList = document.querySelector('.classicStoreSlider .slider-list');
-const favoriteFilmList = document.querySelector('.film.favorite-list');
+const inspirationSlider = document.querySelector('.inspirationSlider');
+const detectiveStoreSlider = document.querySelector('.detectiveStoreSlider');
+const classicStoreSlider = document.querySelector('.classicStoreSlider');
+const favoriteFilmList = document.querySelector('.favorite-film-list');
 
 const render = {
-    init: function() {
+    init: function () {
         this.jsProductListData = [{
             url: 'https://thangnv-199.github.io/my-game/',
             name: 'game',
@@ -28,7 +28,7 @@ const render = {
             url: 'https://thangnv-199.github.io/my-paint/',
             name: 'paint',
             imageSrc: './assets/images/paint.png',
-        }, ];
+        },];
 
         this.figmaProductListData = [{
             url: './pages/figma/covid-19/index.html',
@@ -50,8 +50,8 @@ const render = {
             url: './pages/figma/warehouse/index.html',
             name: 'warehouse',
             imageSrc: './assets/images/figma-warehouse.png',
-        }, ];
-        
+        },];
+
         this.webProductListData = [{
             url: './pages/web/shopee/index.html',
             name: 'shopee',
@@ -72,7 +72,7 @@ const render = {
             url: './pages/web/sns/index.html',
             name: 'sns',
             imageSrc: './assets/images/sns.png',
-        }, ];
+        },];
 
         this.psdProductListData = [{
             url: './pages/psd/octavian2/index.html',
@@ -86,7 +86,7 @@ const render = {
             url: './pages/psd/focal-resume/index.html',
             name: 'focal',
             imageSrc: './assets/images/focal.png',
-        }, ];
+        },];
 
         this.skillData = [{
             name: 'Javascript',
@@ -99,10 +99,10 @@ const render = {
             process: 70,
         }, {
             name: 'React',
-            process: 30,
-        }, ];
+            process: 50,
+        },];
 
-        this.inspirationListData = [{
+        this.inspirationSliderData = [{
             name: 'Bill Gates',
             imageSrc: './assets/images/bill-gates.jpg',
             url: 'https://vi.wikipedia.org/wiki/Bill_Gates',
@@ -117,12 +117,8 @@ const render = {
             imageSrc: './assets/images/thomas-edison.jpg',
             url: 'https://vi.wikipedia.org/wiki/Thomas_Edison',
             description: '“ Thiên tài 1% là cảm hứng và 99% là mồ hôi” '
-        }, {
-            name: 'Jack Ma',
-            imageSrc: './assets/images/jack-ma.jpg',
-            url: 'https://vi.wikipedia.org/wiki/M%C3%A3_V%C3%A2n_(th%C6%B0%C6%A1ng_nh%C3%A2n)',
-            description: '“ Nếu bạn không chịu bắt tay vào làm thì chẳng có điều gì là khả thi cả”'
-        }, {
+        },
+        {
             name: 'Abraham Lincoln',
             imageSrc: './assets/images/abraham-lincoln.jpg',
             url: 'https://vi.wikipedia.org/wiki/Abraham_Lincoln',
@@ -134,18 +130,30 @@ const render = {
             url: 'https://vi.wikipedia.org/wiki/Albert_Einstein',
             description: '“Kẻ nào chưa từng mắc phải lỗi lầm cũng là kẻ chưa bao giờ thử làm việc gì cả”  '
         },
-        // {
-        //     name: 'Helen Keller',
-        //     imageSrc: './assets/images/hellen-keller.jpg',
-        //     url: '#!',
-        //     description: '“ Hãy quay về phía mặt trời và bạn sẽ không thấy bóng tối” '
-        // },
-        // {
-        //     name: 'Walt Disney',
-        //     imageSrc: './assets/images/walt-disney.jpg',
-        //     url: '#!',
-        //     description: '“ Cách để bắt đầu đó là ngừng nói suông và bắt tay vào công việc”'
-        // }
+        {
+            name: 'Helen Keller',
+            imageSrc: './assets/images/hellen-keller.jpg',
+            url: 'https://vi.wikipedia.org/wiki/Helen_Keller',
+            description: '“ Hãy quay về phía mặt trời và bạn sẽ không thấy bóng tối” '
+        },
+        {
+            name: 'Walt Disney',
+            imageSrc: './assets/images/walt-disney.jpg',
+            url: 'https://vi.wikipedia.org/wiki/Walt_Disney',
+            description: '“ Cách để bắt đầu đó là ngừng nói suông và bắt tay vào công việc”'
+        },
+        {
+            name: 'Bill Gates',
+            imageSrc: './assets/images/bill-gates.jpg',
+            url: 'https://vi.wikipedia.org/wiki/Bill_Gates',
+            description: '“Nếu bạn sinh ra trong nghèo khó đó không phải là lỗi của bạn. Nhưng nếu bạn chết trong nghèo khó thì đó là lỗi của bạn”'
+        },
+        {
+            name: 'Oprah Winfrey',
+            imageSrc: './assets/images/Oprah-Winfrey.jpg',
+            url: 'https://vi.wikipedia.org/wiki/Oprah_Winfrey',
+            description: '“Đừng đặt ra giới hạn cho chính mình”'
+        }
         ];
 
         this.favoriteFilmData = [{
@@ -190,9 +198,9 @@ const render = {
             thành một đứa bé khi điều tra một tổ chức bí ẩn và phá nhiều vụ án khi 
             đóng giả làm em của người bạn thân thời thơ ấu và các nhân vật khác.`,
             imageSrc: './assets/images/conana.jpg',
-        }, ];
+        },];
 
-        this.detectiveStoreListData = [{
+        this.detectiveStoreSliderData = [{
             name: 'Đề thi đẫm máu',
             imageSrc: './assets/images/de-thi-dam-mau.jpg',
             url: 'https://tiki.vn/de-thi-dam-mau-tieu-thuyet-trinh-tham-tai-ban-2020-p54308767.html?itm_campaign=SRC_YPD_TKA_PLA_UNK_ALL_UNK_UNK_UNK_UNK_X.30702_Y.230853_Z.607637_CN.%25C4%2590e-Thi-%25C4%2590am-Mau---Tieu-Thuyet-Trinh-Tham-%2528Tai-Ban-2020%2529&itm_medium=CPC&itm_source=tiki-ads&spid=59236489',
@@ -224,12 +232,14 @@ const render = {
             imageSrc: './assets/images/sherlock-home.jpg',
             url: 'https://tiki.vn/sherlock-holmes-toan-tap-hop-3-tap-p370811.html?itm_campaign=SRC_YPD_TKA_PLA_UNK_ALL_UNK_UNK_UNK_UNK_X.10056_Y.67064_Z.227879_CN.Sherlock-Holmes-Toan-Tap-%2528Hop-3-Tap%2529&itm_medium=CPC&itm_source=tiki-ads&spid=12499956',
             description: `Sherlock Holmes là một thám tử tư ở Luân Đôn nổi tiếng nhờ trí thông minh, khả năng suy diễn logic và quan sát tinh tường trong khi phá những vụ án mà cảnh sát phải bó tay.`
-        }, {
+        },
+        {
             name: 'Sự im lặng của bầy cừu',
             imageSrc: './assets/images/su-im-lang-cua-bay-cuu.jpg',
             url: 'https://tiki.vn/su-im-lang-cua-bay-cuu-tai-ban-p8885995.html?itm_campaign=SRC_YPD_TKA_PLA_UNK_ALL_UNK_UNK_UNK_UNK_X.9975_Y.66842_Z.226003_CN.Su-im-lang-cua-bay-cuu-%2528tai-ban%2529&itm_medium=CPC&itm_source=tiki-ads&spid=12513256',
             description: `Những cuộc phỏng vấn ở xà lim với kẻ ăn thịt người ham thích trò đùa trí tuệ, những tiết lộ nửa chừng hắn chỉ dành cho kẻ nào thông minh, những cái nhìn xuyên thấu thân phận và suy tư của cô mà đôi khi cô muốn lảng trá Clarice Starling đã dấn thân vào cuộc điều tra án giết người lột da hàng loạt như thế, để rồi trong tiếng bức bối của chiếc đồng hồ đếm ngược về cái chết, cô phải vật lộn để chấm dứt tiếng kêu bao lâu nay vẫn đeo đẳng giấc mơ mình: tiếng kêu của bầy cừu sắp bị đem đi giết thịt.`
-        }, {
+        },
+        {
             name: 'Mật mã Da vinci',
             imageSrc: './assets/images/mat-ma-da-vinci.jpg',
             url: 'https://tiki.vn/phia-sau-nghi-can-x-tai-ban-2019-p17336364.html?itm_campaign=SRC_YPD_TKA_PLA_UNK_ALL_UNK_UNK_UNK_UNK_X.35798_Y.273253_Z.688479_CN.FBT-ads&itm_medium=CPC&itm_source=tiki-ads&spid=72578633',
@@ -238,7 +248,7 @@ const render = {
         },
         ];
 
-        this.classicStoreListData = [{
+        this.classicStoreSliderData = [{
             name: 'Tam quốc diễn nghĩa',
             imageSrc: './assets/images/tam-quoc.jpg',
             url: 'https://tiki.vn/tam-quoc-dien-nghia-tron-bo-6-tap-tai-ban-2021-p136596503.html?itm_campaign=SRC_YPD_TKA_PLA_UNK_ALL_UNK_UNK_UNK_UNK_X.84771_Y.756267_Z.1488679_CN.Product-Ads-03%252F11%252F2021&itm_medium=CPC&itm_source=tiki-ads&spid=136596504',
@@ -263,25 +273,41 @@ const render = {
             imageSrc: './assets/images/doi-gio-hu.jpg',
             url: 'https://tiki.vn/doi-gio-hu-tai-ban-p2496281.html?spid=2496329',
             description: 'Đồi gió hú, câu chuyện cổ điển về tình yêu ngang trái và tham vọng chiếm hữu, cuốn tiểu thuyết dữ dội và bí ẩn về Catherine Earnshaw, cô con gái nổi loạn của gia đình Earnshaw, với gã đàn ông thô ráp và điên rồ mà cha cô mang về nhà rồi đặt tên là Heathcliff, được trình diễn trên cái nền những đồng truông, quả đồi nước Anh cô quạnh và ban sơ không kém gì chính tình yêu của họ. '
-        }, ];
+        },];
     },
 
-    renderIntroSlider: function(data, container) {
-        const html = data.map(({
-            url,
-            imageSrc,
-            name
-        }) => (`
-                <div class="slider-item">
-                   <div class="slider-image">
-                        <a target="_blank" href="${url}" class="slider-link">
-                        <img src="${imageSrc}" alt="">
-                    </a>
-                   </div>
-                    <h4 class="slider-title">${name}</h4>
+    sliderTemplate: function(data) {
+        return `
+            <div class="slider-item">
+                <a target="_blank" href="${data.url}" class="slider-link">
+                    <img src="${data.imageSrc}" alt="">
+                </a>
+                <a target="_blank" href=${data.url} class="slider-title">${data.name}</a>
+            </div>
+        `
+    },
+
+    sliderTemplate2: function(data) {
+        return `
+            <div class="slider-item">
+                <div class="slider-link">
+                    <img src="${data.imageSrc}" alt="">
+                    <div class="slider-overlay">
+                        <button class="slider-overlay-button">
+                            <a href=${data.url} target="_blank"">Tới trang web</a>
+                        </button>
+                        <button data-src="${data.videoSrc}" class="slider-overlay-button">
+                            Xem video demo
+                        </button>
+                    </div>
                 </div>
-        `)).join('');
-        container.innerHTML = html;
+                <h4 class="slider-title">${data.name}</h4>
+            </div>
+        `
+    },
+
+    renderSlider1: function (data, template, container) {
+        container.innerHTML = data.map(data => template(data)).join('');
     },
 
     renderSkillField: function (data, container) {
@@ -299,62 +325,39 @@ const render = {
         container.innerHTML = html;
     },
 
-    renderFavoriteFilm: function (data, container) {
+    renderCard: function (data, container) {
         const html = data.map(({
+            name,
+            imageSrc,
             url,
-            imageSrc,
-            name,
-            description
-        }) => (`
-            <li class="favorite-item">
-                <a href="${url}" class="favorite-link">
-                    <div class="favorite-image">
-                        <img src="${imageSrc}" alt="">
-                    </div>
-                    <div class="favorite-content">
-                        <h3 class="favorite-name">${name}</h3>
-                        <p class="favorite-description">${description}</p>
-                    </div>
-                </a>
-            </li>
-        `)).join('');
-        container.innerHTML = html;
-    },
-
-    renderFavoriteSlider: function (data, container) {
-        const html = data.map(({
-            name,
-            imageSrc,
             description,
-            url
         }) => (`
-            <li class="slider-item">
-                <a target="_blank" href="${url}" class="slider-link">
-                    <div class="slider-image">
+            <div class="card-item">
+                <a target="_blank" href="${url}" class="card-link">
+                    <div class="card-image">
                         <img src="${imageSrc}" alt="">
                     </div>
-                    <div class="slider-content">
-                        <h3 class="slider-name">${name}</h3>
-                        <p class="slider-description">${description}</p>
+                    <div class="card-content">
+                        <h3 class="card-name">${name}</h3>
+                        <p class="card-description">${description}</p>
                     </div>
                 </a>
-            </li>
+            </div>
         `)).join('');
         container.innerHTML = html;
     },
 
-    start: function() {
+    start: function () {
         this.init();
-        this.renderIntroSlider(this.jsProductListData, jsProductList);
-        this.renderIntroSlider(this.figmaProductListData, figmaProductList);
-        this.renderIntroSlider(this.webProductListData, webProductList);
-        this.renderIntroSlider(this.psdProductListData, psdProductList);
+        this.renderSlider1(this.jsProductListData, this.sliderTemplate, jsProductList);
+        this.renderSlider1(this.webProductListData, this.sliderTemplate, webProductList);
+        this.renderSlider1(this.psdProductListData, this.sliderTemplate, psdProductList);
         this.renderSkillField(this.skillData, skillList);
-        this.renderFavoriteFilm(this.favoriteFilmData, favoriteFilmList);
-        this.renderFavoriteSlider(this.detectiveStoreListData, detectiveStoreList);
-        this.renderFavoriteSlider(this.classicStoreListData, classicStoreList);
-        this.renderFavoriteSlider(this.inspirationListData, inspirationList);
-        
+        this.renderCard(this.inspirationSliderData, inspirationSlider);
+        this.renderCard(this.detectiveStoreSliderData, detectiveStoreSlider);
+        this.renderCard(this.classicStoreSliderData, classicStoreSlider);
+        this.renderCard(this.favoriteFilmData, favoriteFilmList);
+
     },
 }
 
