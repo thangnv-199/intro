@@ -12,7 +12,7 @@ const favoriteFilmList = document.querySelector('.favorite-film-list');
 
 const render = {
     init: function () {
-        this.jsProductListData = [{
+        this.jsProductListData = [ {
             url: 'https://thangnv-199.github.io/my-game/',
             name: 'game',
             imageSrc: './assets/images/game.png',
@@ -28,28 +28,6 @@ const render = {
             url: 'https://thangnv-199.github.io/my-paint/',
             name: 'paint',
             imageSrc: './assets/images/paint.png',
-        },];
-
-        this.figmaProductListData = [{
-            url: './pages/figma/covid-19/index.html',
-            name: 'covid',
-            imageSrc: './assets/images/figma-covid.png',
-        }, {
-            url: './pages/figma/thousand-sunny/index.html',
-            name: 'thousand-sunny',
-            imageSrc: './assets/images/figma-thousand-sunny.png',
-        }, {
-            url: './pages/figma/trafalgar/index.html',
-            name: 'trafalgar',
-            imageSrc: './assets/images/figma-trafalgar.png',
-        }, {
-            url: './pages/figma/trafico/index.html',
-            name: 'trafico',
-            imageSrc: './assets/images/figma-trafico.png',
-        }, {
-            url: './pages/figma/warehouse/index.html',
-            name: 'warehouse',
-            imageSrc: './assets/images/figma-warehouse.png',
         },];
 
         this.webProductListData = [{
@@ -72,6 +50,28 @@ const render = {
             url: './pages/web/sns/index.html',
             name: 'sns',
             imageSrc: './assets/images/sns.png',
+        },];
+
+        this.figmaProductListData = [{
+            url: './pages/figma/covid-19/index.html',
+            name: 'covid',
+            imageSrc: './assets/images/figma-covid.png',
+        }, {
+            url: './pages/figma/thousand-sunny/index.html',
+            name: 'thousand-sunny',
+            imageSrc: './assets/images/figma-thousand-sunny.png',
+        }, {
+            url: './pages/figma/trafalgar/index.html',
+            name: 'trafalgar',
+            imageSrc: './assets/images/figma-trafalgar.png',
+        }, {
+            url: './pages/figma/trafico/index.html',
+            name: 'trafico',
+            imageSrc: './assets/images/figma-trafico.png',
+        }, {
+            url: './pages/figma/warehouse/index.html',
+            name: 'warehouse',
+            imageSrc: './assets/images/figma-warehouse.png',
         },];
 
         this.psdProductListData = [{
@@ -276,38 +276,19 @@ const render = {
         },];
     },
 
-    sliderTemplate: function(data) {
-        return `
+    renderSlider: function (data, container) {
+        let html = '';
+        for (let i = 0; i < data.length; i++) {
+            html += `
             <div class="slider-item">
-                <a target="_blank" href="${data.url}" class="slider-link">
-                    <img src="${data.imageSrc}" alt="">
+                <a target="_blank" href="${data[i].url}" class="slider-link">
+                    <img src="${data[i].imageSrc}" alt="">
                 </a>
-                <a target="_blank" href=${data.url} class="slider-title">${data.name}</a>
+                <a target="_blank" href=${data[i].url} class="slider-title">${data[i].name}</a>
             </div>
         `
-    },
-
-    sliderTemplate2: function(data) {
-        return `
-            <div class="slider-item">
-                <div class="slider-link">
-                    <img src="${data.imageSrc}" alt="">
-                    <div class="slider-overlay">
-                        <button class="slider-overlay-button">
-                            <a href=${data.url} target="_blank"">Tới trang web</a>
-                        </button>
-                        <button data-src="${data.videoSrc}" class="slider-overlay-button">
-                            Xem video demo
-                        </button>
-                    </div>
-                </div>
-                <h4 class="slider-title">${data.name}</h4>
-            </div>
-        `
-    },
-
-    renderSlider1: function (data, template, container) {
-        container.innerHTML = data.map(data => template(data)).join('');
+        }
+        container.innerHTML += html;
     },
 
     renderSkillField: function (data, container) {
@@ -349,9 +330,10 @@ const render = {
 
     start: function () {
         this.init();
-        this.renderSlider1(this.jsProductListData, this.sliderTemplate, jsProductList);
-        this.renderSlider1(this.webProductListData, this.sliderTemplate, webProductList);
-        this.renderSlider1(this.psdProductListData, this.sliderTemplate, psdProductList);
+        this.renderSlider(this.jsProductListData, jsProductList);
+        this.renderSlider(this.webProductListData, webProductList);
+        this.renderSlider(this.figmaProductListData, figmaProductList);
+        this.renderSlider(this.psdProductListData, psdProductList);
         this.renderSkillField(this.skillData, skillList);
         this.renderCard(this.inspirationSliderData, inspirationSlider);
         this.renderCard(this.detectiveStoreSliderData, detectiveStoreSlider);

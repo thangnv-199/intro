@@ -13,6 +13,7 @@ const modal = document.querySelector('.modal');
 const app = {
     init: function () {
         this.isSliderDraggable = false;
+        
     },
 
     handleEvents: function () {
