@@ -31,6 +31,10 @@ const render = {
         },];
 
         this.webProductListData = [{
+            url: './pages/web/tiki/index.html',
+            name: 'tiki',
+            imageSrc: './assets/images/tiki.png',
+        },{
             url: './pages/web/shopee/index.html',
             name: 'shopee',
             imageSrc: './assets/images/shopee.png',

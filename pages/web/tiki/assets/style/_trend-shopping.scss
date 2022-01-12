@@ -1,0 +1,106 @@
+.trend-shopping {
+
+    &-main {
+        background-color: #fff;
+        padding: 0 16px 16px;
+        margin-bottom: 16px;
+    }
+    &-header {
+        display: flex;
+        height: 60px;
+        padding: 10px 0;
+        align-items: center;
+        line-height: 28px;
+
+        &-title {
+            font-weight: 500;
+            margin: auto 0px auto 8px;
+            text-transform: capitalize;
+            font-size: 20px;
+        }
+    }
+
+    &-logo {
+        width: 24px;
+        height: 24px;
+    }
+
+    &-list {
+        &:hover {
+            .nvt-arrow{
+                opacity: 1;
+            }
+        }
+    }
+
+    &-item {
+        padding: 0 10px;
+    }
+
+    &-link {
+        padding: 12px;
+        display: inline-block;
+        border: 1px solid rgb(245, 245, 250);
+    }
+
+    &-title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        color: rgb(36, 36, 36);
+    }
+
+    &-subtitle {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 2px 4px;
+        color: $primary-color;
+        background-color: #f0f8ff;
+    }
+
+    &-image {
+        display: flex;
+        padding-top: 8px;
+
+        img {
+            width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    
+
+    .nvt-arrow {
+        position: absolute;
+        transition: all 0.2s linear;
+        top: 50%;
+        border: none;
+        outline: none;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid $text-color;
+        border-radius: 16px;
+        opacity: 0.6;
+
+        &.--disabled {
+            display: none;
+        }
+    }
+
+    .arrow-prev {
+        left: 0;
+    }
+
+    .arrow-next {
+        right: 0;
+    }
+}

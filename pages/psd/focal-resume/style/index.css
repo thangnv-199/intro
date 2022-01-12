@@ -516,6 +516,10 @@ body {
   padding: 100px 0;
   text-align: center;
   background-color: #f2f2f1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .review-content {
@@ -529,31 +533,9 @@ body {
   font-weight: bold;
 }
 
-.review .slick-dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-}
-
-.review .slick-dots li.slick-active button {
-  background-color: #2ecc71;
-}
-
-.review .slick-dots button {
-  border: none;
-  outline: none;
-  background-color: rgba(46, 204, 113, 0.5);
-  font-size: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
+.review .nvt-dots {
+  margin-top: 20px;
+  color: #2ecc71;
 }
 
 @media screen and (max-width: 767px) {
