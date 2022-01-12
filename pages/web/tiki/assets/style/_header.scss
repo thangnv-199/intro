@@ -1,0 +1,193 @@
+.header {
+    min-height: 100px;
+    background-color: $primary-color;
+    color: #fff;
+
+    &-top , &-bottom {
+        display: grid;
+        grid-template-columns: 190px 1fr 280px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    &-top {
+        padding-top: 18px;
+        padding-bottom: 8px; 
+        height: 66px;
+    }
+
+    &-search {
+        display: flex;
+        align-items: center;
+
+        &-input {
+            border: none;
+            outline: none;
+            padding: 0 12px;
+            flex: 1 1 0;
+            height: 40px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            color: $text-color;
+        }
+
+        &-button {
+            cursor: pointer;
+            border: 0px;
+            width: 120px;
+            background: rgb(13, 92, 182);
+            height: 40px;
+            border-radius: 0px 2px 2px 0px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            outline: none;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    &-user-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &-account {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        p {
+            font-size: 11px;
+        }
+        span {
+            font-size: 12px;
+        }
+    }
+
+    &-cart {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        cursor: pointer;
+        position: relative;
+        &-count {
+            position: absolute;
+            color: rgb(36, 36, 36);
+            background: rgb(253, 216, 53);
+            height: 20px;
+            left: 20px;
+            top: -2px;
+            border-radius: 40px;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0px 7px;
+        }
+        &-label {
+            font-size: 12px;
+        }
+    }
+
+    &-sub-logo {
+        img {
+            height: 12px;
+        }
+    }
+
+    &-search-tags {
+        a {
+            font-size: 11px;
+            margin-right: 12px;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &-seller {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        border-radius: 20px;
+        padding: 2px 8px;
+        background-color: rgba(255, 255, 255, 0.25);
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    @media screen and (max-width: 1023.98px) {
+        min-height: unset;
+        &-top, &-bottom {
+            display: flex;
+            height: auto;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        &-logo, &-sub-logo {
+            margin-right: 50px;
+        }
+
+        &-user-nav {
+            flex-direction: row-reverse;
+        }
+
+        &-search {
+            flex: 1;
+        }
+
+        &-account {
+            &-label {
+                display: none;
+            }
+        }
+        &-cart {
+            &-label {
+                display: none;
+            }
+        }
+        
+        &-bottom {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 767.98px) {
+        
+        &-top {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: auto;
+            gap: unset;
+            padding: 10px 0;
+        }
+
+        &-logo {
+            margin-right: 0;
+        }
+
+        &-search {
+            flex: 1 0 100%;
+            width: 100%;
+            order: 1;
+            margin-top: 12px;
+        }
+    }
+    
+}

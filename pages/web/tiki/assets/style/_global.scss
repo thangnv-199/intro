@@ -1,0 +1,41 @@
+body {
+    background-color: $layout-bg;
+    color: $text-color;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.containers {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.product-price {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+
+    &.--sale {
+        color: $secondary-color;
+    }
+}
+
+.discount-percent {
+    padding: 0px 2px;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 8px;
+    border: 1px solid #ff424e;
+    border-radius: 2px;
+    background-color: #fff0f1;
+    color: #ff424e;
+}
+

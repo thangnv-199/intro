@@ -1,0 +1,97 @@
+.home-brand {
+    margin-bottom: 20px;
+
+    &-main {
+        background: #fff;
+        padding-bottom: 12px;
+    }
+
+    &-header {
+        display: flex;
+        padding: 16px;
+
+        span {
+            text-transform: capitalize;
+            margin-left: 8px;
+            font-size: 20px;
+        }
+    }
+
+    &-logo {
+        width: 24px;
+        height: 24px;
+    }
+
+    &-banner {
+
+        &-item {
+            padding: 0 10px;
+        }
+
+        .nvt-nav {
+            margin: 12px 0;
+        }
+
+        .nvt-dot {
+            color: $primary-color;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+    }
+
+    &-card {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        &-item {
+            padding: 0 10px;
+        }
+
+        &-link {
+            position: relative;
+            display: inline-block;
+            border: 1px solid rgb(238, 238, 238);
+            border-radius: 4px;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &-title {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-transform: capitalize;
+            color: $primary-color;
+            white-space: nowrap;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        &-card {
+            justify-content: flex-start;
+            grid-auto-columns: 33.333%;
+            grid-auto-flow: column;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+        }
+
+        &-card::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        &-card>* {
+            scroll-snap-align: start;
+        }
+    }
+
+}

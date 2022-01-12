@@ -1,3 +1,4 @@
+alert('Dữ liệu được cập nhật vào ngày 11/11/2021');
 const app = {
     init: function () {
 

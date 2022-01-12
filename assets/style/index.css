@@ -48,6 +48,8 @@ ul, ol {
 body {
   color: #2f2f2f;
   font-family: 'Fira Sans', sans-serif;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#EFADCE), to(#ccdde4));
+  background-image: linear-gradient(to right top, #EFADCE, #ccdde4);
 }
 
 p {
@@ -59,8 +61,6 @@ p {
   max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#58aec3), to(#ccdde4));
-  background-image: linear-gradient(to right top, #58aec3, #ccdde4);
 }
 
 .container {
@@ -167,7 +167,7 @@ p {
   border: none;
   border-radius: 20px;
   background-color: #fff;
-  color: #58aec3;
+  color: #EFADCE;
   font-weight: 600;
   padding: 8px 20px;
   -webkit-transition: all 0.2s linear;
@@ -176,13 +176,17 @@ p {
 }
 
 .slider-overlay a:hover, .slider-overlay button:hover {
-  background-color: #58aec3;
+  background-color: #EFADCE;
   color: #fff;
 }
 
 .slider-track {
   overflow-x: auto;
   padding-bottom: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .slider-track::-webkit-scrollbar-track {
@@ -201,14 +205,14 @@ p {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
           box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #58aec3;
+  background-color: #EFADCE;
 }
 
 .slider-heading {
   text-align: center;
   padding: 12px;
   margin-bottom: 12px;
-  border-bottom: 1px solid #58aec3;
+  border-bottom: 1px solid #EFADCE;
 }
 
 .slider-subheading {
@@ -300,7 +304,7 @@ p {
   display: inline-block;
   border: none;
   outline: none;
-  color: #58aec3;
+  color: #EFADCE;
   font-size: 24px;
 }
 
@@ -315,13 +319,13 @@ p {
 
 .detectiveStoreSlider .nvt-dots, .classicStoreSlider .nvt-dots, .inspirationSlider .nvt-dots {
   margin: 0 40px;
-  color: #58aec3;
+  color: #EFADCE;
 }
 
 .header {
   position: relative;
-  padding-top: 50px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  margin-bottom: 20px;
 }
 
 .header-main {
@@ -622,6 +626,9 @@ p {
 @media screen and (max-width: 767px) {
   .body .content {
     margin-bottom: 80px;
+  }
+  .skill-list {
+    padding: 10px;
   }
 }
 
