@@ -9,7 +9,6 @@ const navBtns = document.querySelectorAll('.nav-item');
 const content = document.querySelector('.content');
 const modal = document.querySelector('.modal');
 
-
 const app = {
     init: function () {
         this.isSliderDraggable = false;
@@ -114,10 +113,10 @@ const app = {
 
     start: function () {
         this.init();
-        this.handleEvents();
         this.initSlider(inspirationSlider);
         this.initSlider(detectiveStoreSlider);
         this.initSlider(classicStoreSlider);
+        this.handleEvents();
     },
 }
 

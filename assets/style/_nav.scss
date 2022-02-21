@@ -43,7 +43,7 @@
         }
 
         &.--active {
-            background-image: linear-gradient(142.17deg, #4f93f1 6.66%, #de30fd 91.48%);
+            background-image: linear-gradient(142.17deg, #ccdde4 6.66%, $primary-color 91.48%);
             box-shadow: inset -0.25rem -0.25rem 0.3125rem rgba(0, 0, 0, 0.1), inset 0.25rem 0.25rem 0.3125rem rgba(255, 255, 255, 0.2);
         }
 
@@ -68,7 +68,7 @@
 
     @media screen and (max-width: 767.98px) {
         padding: 12px;
-        background-image: linear-gradient(360deg, #58aec3, #ccdde4);
+        background-image: linear-gradient(360deg, $primary-color, #ccdde4);
         border-radius: 0;
         height: 80px;
 
