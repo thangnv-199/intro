@@ -3,8 +3,8 @@ const figmaProductList = document.querySelector('.figma-slider .slider-list');
 const webProductList = document.querySelector('.web-slider .slider-list');
 const psdProductList = document.querySelector('.psd-slider .slider-list');
 
-const skillFontendList = document.querySelector('.fontend-list');
-const skillUILibraryList = document.querySelector('.ui-library-list');
+const skillFrontendList = document.querySelector('.fontend-list');
+const skillFrontendFBList = document.querySelector('.fontend-framework-library-list');
 const skillBackendList = document.querySelector('.backend-list');
 const skillDatabaseList = document.querySelector('.database-list');
 
@@ -99,27 +99,27 @@ const render = {
       imageSrc: './assets/images/focal.png',
     }, ];
 
-    this.skillFontendData = [{
+    this.skillFrontendData = [{
       name: 'Javascript',
       process: 90,
     }, {
-      name: 'HTML',
+      name: 'HTML & CSS',
       process: 80,
-    }, {
-      name: 'CSS',
-      process: 70,
-    }, {
-      name: 'React',
-      process: 50,
     }, ];
 
-    this.skillUILibraryData = [{
+    this.skillFrontendFBData = [{
+      name: 'React',
+      process: 75,
+    }, {
       name: 'Bootstrap',
       process: 80,
     }, {
       name: 'Material-ui',
       process: 60,
-    }, ];
+    },{
+      name: 'Tailwind',
+      process: 65,
+    },];
 
     this.skillBackendData = [{
       name: 'Nodejs',
@@ -363,8 +363,8 @@ const render = {
     this.renderSlider(this.webProductListData, webProductList);
     this.renderSlider(this.figmaProductListData, figmaProductList);
     this.renderSlider(this.psdProductListData, psdProductList);
-    this.renderSkillField(this.skillFontendData, skillFontendList);
-    this.renderSkillField(this.skillUILibraryData, skillUILibraryList);
+    this.renderSkillField(this.skillFrontendData, skillFrontendList);
+    this.renderSkillField(this.skillFrontendFBData, skillFrontendFBList);
     this.renderSkillField(this.skillBackendData, skillBackendList);
     this.renderSkillField(this.skillDatabaseData, skillDatabaseList);
     this.renderCard(this.inspirationSliderData, inspirationSlider);

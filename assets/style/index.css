@@ -1,3 +1,15 @@
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -580,7 +592,7 @@ body {
   left: 0;
   padding: 0 12px;
   width: var(--process);
-  background-image: linear-gradient(142.17deg, rgba(48, 134, 255, 0.66), rgba(48, 76, 253, 0.9));
+  background-image: linear-gradient(142.17deg, #E685B5, rgba(230, 133, 181, 0.66));
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;

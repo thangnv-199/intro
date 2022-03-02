@@ -1,4 +1,5 @@
 const jsSliderTrack = document.querySelector('.js-slider .slider-track');
+const reactSliderTrack = document.querySelector('.react-slider .slider-track');
 const figmaSliderTrack = document.querySelector('.figma-slider .slider-track');
 const webSliderTrack = document.querySelector('.web-slider .slider-track');
 const psdSliderTrack = document.querySelector('.psd-slider .slider-track');
@@ -16,7 +17,9 @@ const app = {
     },
 
     handleEvents: function () {
-        [jsSliderTrack, figmaSliderTrack, webSliderTrack, psdSliderTrack].forEach(slider => {
+        [jsSliderTrack, figmaSliderTrack, 
+          webSliderTrack, psdSliderTrack, reactSliderTrack
+        ].forEach(slider => {
             this.draggbleAxisX(slider);
             slider.querySelectorAll('.slider-link').forEach(image => {
                 image.addEventListener('click', (e) => {
