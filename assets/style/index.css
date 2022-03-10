@@ -635,6 +635,13 @@ body {
   .body .content {
     margin-bottom: 80px;
   }
+  .target .card-link {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    height: auto;
+  }
   .skill-list {
     padding: 10px;
   }

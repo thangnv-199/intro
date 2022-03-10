@@ -4,7 +4,7 @@ const webProductList = document.querySelector('.web-slider .slider-list');
 const psdProductList = document.querySelector('.psd-slider .slider-list');
 
 const skillFrontendList = document.querySelector('.fontend-list');
-const skillFrontendFBList = document.querySelector('.fontend-framework-library-list');
+// const skillFrontendFBList = document.querySelector('.fontend-framework-library-list');
 const skillBackendList = document.querySelector('.backend-list');
 const skillDatabaseList = document.querySelector('.database-list');
 
@@ -105,21 +105,21 @@ const render = {
     }, {
       name: 'HTML & CSS',
       process: 80,
-    }, ];
-
-    this.skillFrontendFBData = [{
-      name: 'React',
+    }, {
+      name: 'Reactjs',
       process: 75,
     }, {
-      name: 'Bootstrap',
+      name: 'Bootstrap, Material-ui, Tailwind',
       process: 80,
-    }, {
-      name: 'Material-ui',
-      process: 60,
-    },{
-      name: 'Tailwind',
-      process: 65,
     },];
+
+    // this.skillFrontendFBData = [{
+    //   name: 'React',
+    //   process: 75,
+    // }, {
+    //   name: 'Bootstrap, Material-ui, Tailwind',
+    //   process: 80,
+    // },];
 
     this.skillBackendData = [{
       name: 'Nodejs',
@@ -364,7 +364,7 @@ const render = {
     this.renderSlider(this.figmaProductListData, figmaProductList);
     this.renderSlider(this.psdProductListData, psdProductList);
     this.renderSkillField(this.skillFrontendData, skillFrontendList);
-    this.renderSkillField(this.skillFrontendFBData, skillFrontendFBList);
+    // this.renderSkillField(this.skillFrontendFBData, skillFrontendFBList);
     this.renderSkillField(this.skillBackendData, skillBackendList);
     this.renderSkillField(this.skillDatabaseData, skillDatabaseList);
     this.renderCard(this.inspirationSliderData, inspirationSlider);
