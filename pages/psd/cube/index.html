@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="./assets/tailwind/tailwind.js"></script>
+  <script src="./assets/tailwind/tailwindConfig.js"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .container {
+        @apply max-w-container px-20 mx-auto
+      }
+      .button {
+        @apply px-80 py-20 inline-block uppercase h-70 font-semibold text-white rounded
+          transition duration-300
+      }
+      .heading {
+        @apply text-30 uppercase font-bold text-center relative pb-10
+          after:h-4 after:w-70 after:inline-block after:absolute
+          after:bottom-0 after:left-1/2 after:-translate-x-1/2
+          md:text-40
+      }
+      .social-icon {
+        @apply bg-grey rounded-full w-34 h-34 flex items-center justify-center text-white
+          transition duration-300
+          hover:bg-white hover:text-grey
+      }
+    }
+  </style>
+  <style>
+    .donut {
+      stroke-dasharray: 500;
+      -webkit-animation: donut 1s ease-out forwards;
+      animation: donut 1s ease-out forwards;
+    }
+
+    @keyframes donut {
+      from {
+        stroke-dashoffset: 500;
+      }
+    }
+  </style>
+</head>
+
+<body class="
+  text-16 text-black-primary font-primary
+  md:text-18
+">
+  <div class="max-w-wrapper mx-auto overflow-hidden">
+
+    <div class="bg-purple text-white">
+      <header class="container pt-30 md:pt-60">
+        <div class="flex items-center justify-between">
+          <div>
+            <img src="./assets/images/logo.png" alt="">
+          </div>
+          <nav class="flex items-center gap-10 hidden md:flex">
+            <div class="uppercase cursor-pointer py-10 px-18 bg-purple-dark rounded">
+              home
+            </div>
+            <div class="hover:text-purple-dark uppercase cursor-pointer py-10 px-18 rounded">
+              about
+            </div>
+            <div class="hover:text-purple-dark uppercase cursor-pointer py-10 px-18 rounded">
+              work
+            </div>
+            <div class="hover:text-purple-dark uppercase cursor-pointer py-10 px-18 rounded">
+              blog
+            </div>
+            <div class="hover:text-purple-dark uppercase cursor-pointer py-10 px-18 rounded">
+              contact
+            </div>
+          </nav>
+          <label class="block md:hidden text-30 p-8 cursor-pointer" for="nav-mobile-checkbox">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+          <input type="checkbox" id="nav-mobile-checkbox" class="peer hidden">
+          <div class="fixed inset-0 bg-purple z-50 hidden
+          peer-checked:block peer-checked:animate-fadeIn">
+            <label class="absolute top-0 right-0 text-40 px-20 py-10 cursor-pointer" for="nav-mobile-checkbox">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+            <nav class="mt-150 text-center">
+              <ul>
+                <li>
+                  <a href="#!" class="text-30 font-semibold uppercase py-15 block text-purple-dark">home</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-30 font-semibold uppercase py-15 block hover:text-purple-dark">about</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-30 font-semibold uppercase py-15 block hover:text-purple-dark">work</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-30 font-semibold uppercase py-15 block hover:text-purple-dark">blog</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-30 font-semibold uppercase py-15 block hover:text-purple-dark">contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="py-140 text-center container">
+        <p class="text-32 sm:text-40 font-bold">
+          Hi there! We are the new kids on the block
+          and we build awesome websites and mobile apps.
+        </p>
+        <div class="mt-50">
+          <button class="button bg-orange hover:bg-white hover:text-orange">
+            WORK WITH US!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-green py-100">
+      <div class="container">
+        <div class="text-center max-w-600 mx-auto">
+          <h1 class="heading after:bg-green-dark">SERVICES WE PROVIDE</h1>
+          <p class="text-18 mt-20">We are working with both individuals and businesses from all over the globe
+            to create awesome websites and applications.
+          </p>
+        </div>
+        <div class="
+          mt-80 grid grid-cols-1 gap-x-20 gap-y-60
+          sm:grid-cols-2
+          lg:grid-cols-4
+        ">
+          <div class="text-center">
+            <div>
+              <img class="mx-auto h-150" src="./assets/images/Flag-icon.png" alt="">
+            </div>
+            <h4 class="
+              mt-50 mb-20 text-20 font-bold uppercase 
+              md:text-24">
+              branding
+            </h4>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img class="mx-auto h-150" src="./assets/images/Crayon-icon.png" alt="">
+            </div>
+            <h4 class="
+              mt-50 mb-20 text-20 font-bold uppercase 
+              md:text-24">
+              design
+            </h4>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img class="mx-auto h-150" src="./assets/images/Gears-icon.png" alt="">
+            </div>
+            <h4 class="
+              mt-50 mb-20 text-20 font-bold uppercase 
+              md:text-24">
+              development
+            </h4>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img class="mx-auto h-150" src="./assets/images/Rocket-icon.png" alt="">
+            </div>
+            <h4 class="
+              mt-50 mb-20 text-20 font-bold uppercase 
+              md:text-24">
+              ROCKET SCIENCE
+            </h4>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-grey-light text-blue-darkest py-100 text-">
+      <div class="container">
+        <div class="text-center max-w-600 mx-auto">
+          <h1 class="heading after:bg-grey">MEET OUR BEAUTIFUL TEAM</h1>
+          <p class="text-18 mt-20">
+            We are a small team of designers and developers, who help brand
+          </p>
+        </div>
+        <div class="
+          mt-80 grid grid-cols-1 gap-60
+          sm:grid-cols-2 sm:gap-20
+          lg:grid-cols-4
+        ">
+          <div class="text-center">
+            <div>
+              <img class="mx-auto rounded-full overflow-hidden h-200 w-200 object-cover"
+                src="./assets/images/istockphoto-1289220781-170667a.jpg" alt="">
+            </div>
+            <h4 class="mt-50 text-24 font-bold uppercase">ANNE HATHAWAY</h4>
+            <p class="text-sky-blue mb-20">CEO / Marketing Guru</p>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+            <div class="mt-20 flex item-center justify-center gap-12">
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img class="mx-auto rounded-full overflow-hidden h-200 w-200 object-cover"
+                src="./assets/images/istockphoto-1193075035-612x612.jpg" alt="">
+            </div>
+            <h4 class="mt-50 text-24 font-bold uppercase">Ashley Greene</h4>
+            <p class="text-sky-blue mb-20">SEO / Developer</p>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+            <div class="mt-20 flex item-center justify-center gap-12">
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img class="mx-auto rounded-full overflow-hidden h-200 w-200 object-cover"
+                src="./assets/images/istockphoto-1288538088-612x612.jpg" alt="">
+            </div>
+            <h4 class="mt-50 text-24 font-bold uppercase">Kate Upton</h4>
+            <p class="text-sky-blue mb-20">Creative Director</p>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+            <div class="mt-20 flex item-center justify-center gap-12">
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img class="mx-auto rounded-full overflow-hidden h-200 w-200 object-cover"
+                src="./assets/images/istockphoto-1336524166-170667a.jpg" alt="">
+            </div>
+            <h4 class="mt-50 text-24 font-bold uppercase">Olivia Wilde</h4>
+            <p class="text-sky-blue mb-20">Lead Designer</p>
+            <p>Lorem ipsum dolor sit amet,
+              consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+            <div class="mt-20 flex item-center justify-center gap-12">
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#!" class="social-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white py-100">
+      <div class="container">
+        <div class="text-center max-w-600 mx-auto">
+          <h1 class="heading after:bg-grey">WE GOT SKILLS!</h1>
+          <p class="text-18 mt-20">We are working with both individuals and businesses from all over the globe
+            to create awesome websites and applications.
+          </p>
+        </div>
+        <div class="
+          mt-80 grid grid-cols-1 gap-60
+          sm:grid-cols-2 
+          md:grid-cols-4 md:gap-20
+        ">
+          <!-- <div class="text-center">
+            <div class="w-160 h-160 rounded-full border-10 border-sky-blue m-auto flex">
+              <span class="m-auto text-40">90%</span>
+            </div>
+            <h4 class="mt-20 text-24 font-bold uppercase">Web Design</h4>
+          </div> -->
+          <div class="text-center">
+            <div class="relative">
+              <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-40">90%</h2>
+              <svg class="-rotate-90 m-auto" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>Layer 1</title>
+                  <circle r="80" cy="100" cx="100" stroke-width="8" stroke="#f2f2f2" fill="none"/>
+                  <circle id="circle" style="stroke-dashoffset: 50" class="donut" r="80" cy="100" cx="100"
+                    stroke-width="10" stroke="#30bae7" fill="none" />
+                </g>
+              </svg>
+            </div>
+            <h4 class="text-24 font-bold uppercase">Web Design</h4>
+          </div>
+
+          <div class="text-center">
+            <div class="relative">
+              <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-40">75%</h2>
+              <svg class="-rotate-90 m-auto" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>Layer 1</title>
+                  <circle r="80" cy="100" cx="100" stroke-width="8" stroke="#f2f2f2" fill="none"/>
+                  <circle id="circle" style="stroke-dashoffset: 125" class="donut" r="80" cy="100" cx="100"
+                    stroke-width="10" stroke="#d74680" fill="none" />
+                </g>
+              </svg>
+            </div>
+            <h4 class="text-24 font-bold uppercase">HTML / CSS</h4>
+          </div>
+
+          <div class="text-center">
+            <div class="relative">
+              <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-40">70%</h2>
+              <svg class="-rotate-90 m-auto" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>Layer 1</title>
+                  <circle r="80" cy="100" cx="100" stroke-width="8" stroke="#f2f2f2" fill="none"/>
+                  <circle id="circle" style="stroke-dashoffset: 150" class="donut" r="80" cy="100" cx="100"
+                    stroke-width="10" stroke="#17c2a4" fill="none" />
+                </g>
+              </svg>
+            </div>
+            <h4 class="text-24 font-bold uppercase">HTML / CSS</h4>
+          </div>
+
+          <div class="text-center">
+            <div class="relative">
+              <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-40">80%</h2>
+              <svg class="-rotate-90 m-auto" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>Layer 1</title>
+                  <circle r="80" cy="100" cx="100" stroke-width="8" stroke="#f2f2f2" fill="none"/>
+                  <circle id="circle" style="stroke-dashoffset: 100" class="donut" r="80" cy="100" cx="100"
+                    stroke-width="10" stroke="#eb7d4b" fill="none" />
+                </g>
+              </svg>
+            </div>
+            <h4 class="text-24 font-bold uppercase">UI / UX</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-yellow py-100">
+      <div class="container">
+        <div class="text-center max-w-600 mx-auto">
+          <h1 class="heading after:bg-yellow-dark">OUR PORTFOLIO</h1>
+          <p class="text-18 mt-20">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet
+            consectetur, adipisci velit, sed quia non numquam.
+          </p>
+          <div class="mt-40 flex items-center justify-center">
+            <button class="uppercase bg-white px-25 h-40 mx-6 rounded">all</button>
+            <button class="hover:text-white uppercase bg-yellow-dark px-25 h-40 mx-6 rounded">web</button>
+            <button class="hover:text-white uppercase bg-yellow-dark px-25 h-40 mx-6 rounded">apps</button>
+            <button class="hover:text-white uppercase bg-yellow-dark px-25 h-40 mx-6 rounded">icons</button>
+          </div>
+        </div>
+        <div class="
+          mt-60 grid grid-cols-1 gap-x-20 gap-y-60
+          sm:grid-cols-2
+        ">
+          <div class="text-center">
+            <div>
+              <img src="./assets/images/1.png" alt="">
+            </div>
+            <p class="uppercase mt-28">Isometric Perspective Mock-Up</p>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img src="./assets/images/2.png" alt="">
+            </div>
+            <p class="uppercase mt-28">Time Zone App UI</p>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img src="./assets/images/3.png" alt="">
+            </div>
+            <p class="uppercase mt-28">Viro Media Players UI copy 2</p>
+          </div>
+
+          <div class="text-center">
+            <div>
+              <img src="./assets/images/4.png" alt="">
+            </div>
+            <p class="uppercase mt-28">Blog / Magazine Flat UI Kit</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-80 text-center">
+        <button class="button bg-green hover:bg-white hover:text-green">LOAD MORE PROJECTS</button>
+      </div>
+    </div>
+
+    <div class="bg-pink text-white py-100">
+      <div class="container">
+        <div class="text-center max-w-600 mx-auto">
+          <h1 class="heading after:bg-pink-dark">WHAT POEPLE SAY ABOUT US</h1>
+          <p class="text-18 mt-20">Our clients love us! </p>
+        </div>
+        <div class="
+          mt-60 grid grid-cols-1 gap-x-20 gap-y-60
+          md:grid-cols-2
+        ">
+          <div class="
+            flex gap-x-40 flex-col text-center
+            sm:flex-row sm:text-left
+          ">
+            <div>
+              <img class="w-100 max-w-100 h-100 rounded-full object-cover m-auto mb-12"
+                src="./assets/images/photo-1535713875002-d1d0cf377fde.avif" alt="">
+            </div>
+            <div>
+              <p class="italic mb-12 text-21">"Nullam dapibus blandit orci, viverra gravida dui lobortis eget"</p>
+              <p class="font-bold text-24">Chanel Iman</p>
+              <p class="text-yellow">CEO of Pinterest</p>
+            </div>
+          </div>
+
+          <div class="
+            flex gap-x-40 flex-col text-center
+            sm:flex-row sm:text-left
+          ">
+            <div>
+              <img class="w-100 max-w-100 h-100 rounded-full object-cover m-auto mb-12"
+                src="./assets/images/photo-1570295999919-56ceb5ecca61.avif" alt="">
+            </div>
+            <div>
+              <p class="italic mb-12 text-21">“Vivamus luctus urna sed urna ultricies ac tempor dui sagittis."</p>
+              <p class="font-bold text-24">ADRIANA LIMA </p>
+              <p class="text-yellow">Founder of Instagram </p>
+            </div>
+          </div>
+
+          <div class="
+            flex gap-x-40 flex-col text-center
+            sm:flex-row sm:text-left
+          ">
+            <div>
+              <img class="w-100 max-w-100 h-100 rounded-full object-cover m-auto mb-12"
+                src="./assets/images/photo-1607746882042-944635dfe10e.avif" alt="">
+            </div>
+            <div>
+              <p class="italic mb-12 text-21">"Nullam dapibus blandit orci, viverra gravida dui lobortis eget"</p>
+              <p class="font-bold text-24">ANNE HATHAWAY </p>
+              <p class="text-yellow">Lead Designer at Behance </p>
+            </div>
+          </div>
+
+          <div class="
+            flex gap-x-40 flex-col text-center
+            sm:flex-row sm:text-left
+          ">
+            <div>
+              <img class="w-100 max-w-100 h-100 rounded-full object-cover m-auto mb-12"
+                src="./assets/images/photo-1438761681033-6461ffad8d80.avif" alt="">
+            </div>
+            <div>
+              <p class="italic mb-12 text-21">"Nullam dapibus blandit orci, viverra gravida dui lobortis eget"</p>
+              <p class="font-bold text-24">EMMA STONE </p>
+              <p class="text-yellow">Co-Founder of Shazam </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-blue text-white py-100">
+      <div class="container">
+        <div class="text-center max-w-600 mx-auto">
+          <h1 class="heading after:bg-blue-darkest">GET IN TOUCH</h1>
+          <p class="text-18 mt-20">1600 Pennsylvania Ave NW, Washington, DC 20500, United States o</p>
+        </div>
+        <form class="mt-70">
+          <div class="
+            grid grid-cols-1 gap-30
+            sm:grid-cols-2
+          ">
+            <input required type="text" placeholder="Your Name *"
+              class="h-55 bg-blue-darkest placeholder:text-white px-20">
+            <input required type="text" placeholder="Your Email *"
+              class="h-55 bg-blue-darkest placeholder:text-white px-20">
+          </div>
+          <div class="mt-24">
+            <textarea required placeholder="Your Message *"
+              class="w-full h-200 bg-blue-darkest placeholder:text-white"></textarea>
+          </div>
+          <div class="mt-55 text-center">
+            <button class="button bg-sky-blue hover:bg-white hover:text-sky-blue">send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="bg-blue-dark">
+      <ul class="
+        h-auto flex item-center justify-center gap-x-50 flex-wrap gap-y-20 py-20
+        lg:h-100
+      ">
+        <li class="flex">
+          <a href="#!" class="text-24 text-white m-auto font-semibold hover:text-sky-blue">Facebook</a>
+        </li>
+        <li class="flex">
+          <a href="#!" class="text-24 text-white m-auto font-semibold hover:text-sky-blue">Twitter</a>
+        </li>
+        <li class="flex">
+          <a href="#!" class="text-24 text-white m-auto font-semibold hover:text-sky-blue">Google+</a>
+        </li>
+        <li class="flex">
+          <a href="#!" class="text-24 text-white m-auto font-semibold hover:text-sky-blue">LinkedIn</a>
+        </li>
+        <li class="flex">
+          <a href="#!" class="text-24 text-white m-auto font-semibold hover:text-sky-blue">Dribbble</a>
+        </li>
+        <li class="flex">
+          <a href="#!" class="text-24 text-white m-auto font-semibold hover:text-sky-blue">Github</a>
+        </li>
+      </ul>
+    </footer>
+</body>
+
+</html>

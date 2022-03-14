@@ -124,5 +124,3 @@ const app = {
 }
 
 app.start();
-
-console.log('Dolce & Gabbana'.replace(/&/, ''))

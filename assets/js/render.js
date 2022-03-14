@@ -97,6 +97,10 @@ const render = {
       url: './pages/psd/focal-resume/index.html',
       name: 'focal',
       imageSrc: './assets/images/focal.png',
+    }, {
+      url: './pages/psd/cube/index.html',
+      name: 'Cuda',
+      imageSrc: './assets/images/psd-cube.jpg',
     }, ];
 
     this.skillFrontendData = [{
